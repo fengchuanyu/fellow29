@@ -18,43 +18,19 @@
     height: 500px;
     border: 1px solid black;
     background-color: red;
-    /* margin:10px; */
-    /* margin-top:10px;
-    margin-left: 40px; */
-    /* 顺时针排列 */
-    /* margin:10px 20px 30px 40px; */
-    /* 第一个参数上下 第二个参数左右 */
-    /* margin:10px 40px; */
     margin:0 auto;
     position: relative;
   }
   .div2{
-    width: 300px;
-    height: 300px;
-    background-color: blue;
-    /* 相对定位 */
-    /* position: relative;
-    left: 100px;
-    top:100px; */
-
-    /* 绝对定位 */
-    position: absolute;
-    left: 50%;
-    margin-left: -150px;
-    top:50%;
-    margin-top:-150px;
-    /* top:10px; */
-     
-    
-  }
-  .div3{
-    height: 100px;
     width: 100px;
-    background: #000;
-    position:fixed;
-    right: 0;
-    bottom: 0;
+    height: 100px;
+    background-color: blue;
+    position: absolute;
+    left: 20px;
+    top: 50px;
+    z-index: 1;
   }
+  
   .div4{
     height: 100px;
     width: 100px;
@@ -70,6 +46,5 @@
     <div class="div2"></div>
     <div class="div4"></div>
   </div>
-  <div class="div3"></div>
 </body>
 </html>
