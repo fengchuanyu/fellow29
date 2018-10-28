@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  *{
+    margin: 0;
+    padding:0;
+  }
+  .div1{
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+    background-color: red;
+    /* margin:10px; */
+    /* margin-top:10px;
+    margin-left: 40px; */
+    /* 顺时针排列 */
+    /* margin:10px 20px 30px 40px; */
+    /* 第一个参数上下 第二个参数左右 */
+    /* margin:10px 40px; */
+    margin:0 auto;
+    position: relative;
+  }
+  .div2{
+    width: 300px;
+    height: 300px;
+    background-color: blue;
+    /* 相对定位 */
+    /* position: relative;
+    left: 100px;
+    top:100px; */
+
+    /* 绝对定位 */
+    position: absolute;
+    left: 50%;
+    margin-left: -150px;
+    top:50%;
+    margin-top:-150px;
+    /* top:10px; */
+     
+    
+  }
+  </style>
+</head>
+<body>
+  <div class="div1">
+    <div class="div2"></div>
+  </div>
+</body>
+</html>
