@@ -6,30 +6,252 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <style>
-    .fieldset-border{
+    *{
+      margin:0;
+      padding:0;
+    }
+    a{
+      text-decoration: none;
+    }
+    .clearfix::after{
+      content: "";
+      display: block;
+      clear: both;
+    }
+    /* top start */
+    .top{
+      width: 1130px;
+      margin:0 auto;
+    }
+    .top .top-logo{
+      height: 98px;
+      width: 200px;
+      background-image: url("./img/mistore_logo.png")
+    }
+    .top .top-logo a{
+      display: block;
+      height: 98px;
+    }
+    /* top end */
+    /* middle start */
+    .middle{
+      position: relative;
+    }
+    .middle .middle-bg{
+      height: 580px;
+      background-image: url("./img/mimg.jpg");
+      background-position: top center;
+    }
+    .middle .middle-content{
+      width: 1130px;
+      margin:0 auto;
+      position: absolute;
+      top:30px;
+      left: 50%;
+      margin-left: -565px;
+    }
+    .middle .middle-form{
+      width: 410px;
+      height: 524px;
+      background-color: white;
+      
+      margin:0 auto;
+      margin-right: 0;
+    }
+    .middle .mf-top{
+      text-align: center;
+      padding:24px 0;
+      margin-bottom: 10px;
+    }
+    .middle .mf-top a{
+      font-size: 24px;
+      color: #666;
+    }
+    .middle .mf-top a:hover{
+      color: #f56600;
+    }
+    .middle .mf-top .active{
+      color: #f56600;
+    }
+    .middle .mf-top span{
+      margin:0 35px;
+      width: 1px;
+      border: 1px solid #ddd;
+    }
+    .middle .mf-middle{
+      width: 348px;
+      margin: 0 auto;
+    }
+    .middle .mf-middle input{
+      width: 314px;
+      height: 22px;
+      margin-bottom: 14px;
+      font-size: 14px;
+      padding: 13px 16px 13px 14px;
+      outline: none;
+    }
+    .middle .mf-middle button{
+      height: 55px;
+      width: 100%;
+      background-color: #ef5b00;
+      border: none;
+      color: white;
+      font-size: 14px;
+      margin-top:10px;
+    }
+    .middle .mf-bottom{
+      
+      width: 348px;
+      margin: 0 auto;
+      margin-top:10px;
+    }
+    .middle .mf-bottom .mfb-left{
+      float: left;
+    }
+    .middle .mfb-left a{
+      font-size: 14px;
+      color: #EF5B02;
+    }
+    .middle .mf-bottom .mfb-right{
+      float: right;
+    }
+    .middle .mfb-right a{
+      font-size: 14px;
+      color: #666;
+    }
+    .middle .mfb-right span{
+      margin-left: 5px;
+      color: #666;
+      font-size: 14px;
+    }
+    .middle .mf-footer{
+      width: 348px;
+      margin: 0 auto;
+    }
+    .middle .mf-footer fieldset{
+      text-align: center;
       border-width: 1px 0 0 0;
       border-style: solid;
-      border-color: #ddd;
+      border-color: #e0e0e0;
+      color: #bbb;
+      font-size: 14px;
     }
-    .fieldset-legend{
+    .middle .mff-icon{
+      width: 256px;
+      margin:0 auto;
+    }
+    .middle .mff-icon li{
+      list-style: none;
+      height: 30px;
+      width: 30px;      
+      background-color: red;
+      border-radius: 50% 50%;
+      float: left;
+      margin: 0 17px;
       text-align: center;
+      line-height: 34px;
     }
+    .middle .mff-icon a{
+      display: inline-block;
+      background-image: url("./img/icons_type.png");
+      background-repeat: no-repeat;
+      width: 24px;
+      height: 24px;
+    }
+    .middle .mff-icon .qq{
+      background-color: #0288d1;
+    }
+    .middle .mff-icon .qq a{
+      width: 18px;
+      height: 18px;
+      background-position: -19px 0;
+      
+    }
+    .middle .mff-icon .weibo{
+      background-color:#d32f2f;
+    }
+    .middle .mff-icon .weibo a{
+      width: 18px;
+      height: 18px;
+      background-position: -38px 0;
+    }
+    .middle .mff-icon .alipay{
+      background-color:#0ae
+    }
+    .middle .mff-icon .alipay a{
+      width: 25px;
+      height: 18px;
+      background-position: -57px 0;
+    }
+    .middle .mff-icon .wechat{
+      background-color:#00d20d;
+    }
+    .middle .mff-icon .wechat a{
+      width: 24px;
+      height: 18px;
+      background-position: -83px 0;
+    }
+    /* middle end */
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-
-    </div>
-    <div class="content">
-      <div></div>
-      <div></div>
-    </div>
-    <div class="footer"></div>
-  </div>
-  <fieldset class="fieldset-border">
-    <legend class="fieldset-legend">登录方式</legend>
-  </fieldset>
-  <input type="password">
+   <div class="container">
+     <div class="top">
+       <div class="top-logo">
+         <a href="https://www.mi.com/index.html"></a>
+       </div>
+     </div>
+     <div class="middle">
+       <div class="middle-bg">
+         
+       </div>
+       <div class="middle-content">
+          <div class="middle-form">
+            <div class="mf-top">
+              <a class="active" href="javascript:void(0)">账号登陆</a>
+              <span></span>
+              <a href="javascript:void(0)">扫码登陆</a>
+            </div>
+            <div class="mf-middle">
+              <input type="text" placeholder="邮箱/手机号/小米ID">
+              <input type="password" placeholder="密码">
+              <button>登陆</button>
+            </div>
+            <div class="mf-bottom clearfix">
+              <div class="mfb-left">
+                <a href="javascript:void(0)">手机短信登录/注册</a>
+              </div>
+              <div class="mfb-right">
+                <a href="javascript:void(0)">立即注册</a>
+                <span>|</span>
+                <a href="javascript:void(0)">忘记密码</a>
+              </div>
+            </div>
+            <div class="mf-footer">
+              <fieldset>
+                <legend>其他登陆方式</legend>
+              </fieldset>
+              <ul class="mff-icon clearfix">
+                <li class="qq">
+                  <a href=""></a>
+                </li>
+                <li class="weibo">
+                  <a href=""></a>
+                </li>
+                <li class="alipay">
+                  <a href=""></a>
+                </li>
+                <li class="wechat">
+                  <a href=""></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+       </div>
+     </div>
+     <div class="bottom">
+       
+     </div>
+   </div> 
 </body>
 </html>
