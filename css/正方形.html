@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding:0;
+    }
+    div{
+      width: 50vw;
+      /* width: 0; */
+      /* padding-left: 50%; */
+
+      /* height: 50vw; VW视口宽度0-100   vh视口高度0-100*/
+      
+      /* padding-bottom: 50%; padding百分比的值是相对父级宽度的*/
+      
+      background: red;
+    }
+    div::after{
+      content: "";
+      display: block;
+      padding-bottom:100%;
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+</body>
+</html>

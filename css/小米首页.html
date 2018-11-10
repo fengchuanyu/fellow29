@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <link rel="stylesheet" href="http://at.alicdn.com/t/font_747925_64mbtny4ksk.css">
+  <link rel="stylesheet" href="http://at.alicdn.com/t/font_747925_94xeg63klxd.css">
   <style>
     *{
       margin: 0;
@@ -13,6 +13,9 @@
     }
     a{
       text-decoration: none;
+    }
+    li{
+      list-style: none;
     }
     .top-nav{
       font-size: 12px;
@@ -47,6 +50,96 @@
       background-color: #424242;
       padding: 0 20px;
     }
+    /* site-header start */
+    .sh-content{
+      width: 1226px;
+      margin: 22px auto 0;
+    }
+    .header-logo{
+      float: left;
+      width: 62px;
+      height: 60px;
+    }
+    .header-logo a{
+      display: block;
+      width: 55px;
+      height: 55px;
+      background-color: #ff6700;
+    }
+    .header-logo a::before{
+      content: "";
+      display: block;
+      width: 55px;
+      height: 55px;
+      background: url("./img/mi-logo.png") no-repeat 50% 50%
+    }
+    .header-nav{
+      float: left;
+      width: 850px;
+      height: 60px;
+    }
+    .header-nav ul li{
+      float: left;
+      
+    }
+    .header-nav li a{
+      display: block;
+      padding: 20px 10px 38px;
+      color: #333;
+      font-size: 16px;
+    }
+    .header-nav li a:hover{
+      color: #ff6700;
+    }
+    .header-nav .hn-gif{
+      width: 165px;
+      height: 60px;
+      background: url("./img/mi-gif.gif") no-repeat;
+      margin-left: 10px;
+      margin-top: -4px;
+    }
+    .header-search{
+      float: right;
+      width: 300px;
+      height: 60px;
+    }
+    .header-search input{
+      float: left;
+      font-size: 14px;
+      outline: none;
+      width: 223px;
+      height: 48px;
+      padding: 0 10px;
+      border: 1px solid #e0e0e0;
+    }
+    .header-search .search-form{
+      position: relative;
+    }
+    .header-search button{
+      float: left;
+      width: 52px;
+      height: 50px;
+      
+      border: 1px solid #e0e0e0;
+    }
+    .header-search button i{
+      font-size: 23px;
+      color: #333;
+    }
+    .header-search .search-text{
+      position: absolute;
+      right: 65px;
+      top: 18px;
+      font-size: 12px;
+      color: #757575;
+    }
+    .header-search .search-text span{
+      margin-left: 5px;
+      background: #eee;
+      padding: 0 5px;
+    }
+
+    /* site-header end */
   </style>
 </head>
 <body>
@@ -78,6 +171,82 @@
           
         </div>
         
+      </div>
+      <div class="site-header">
+        <div class="sh-content">
+            <div class="header-logo">
+              <a href="https://www.mi.com/index.html"></a>
+            </div>
+            <div class="header-nav">
+              <ul>
+                <li class="hn-gif">
+                  <a  href="javascript:void(0);">
+                    <span></span>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:void(0);">
+                    <span>小米手机</span>
+                  </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        <span>红米</span>
+                      </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        <span>电视</span>
+                      </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        <span>笔记本</span>
+                      </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        <span>空调</span>
+                      </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        <span>新品</span>
+                      </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        <span>路由器</span>
+                      </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        <span>智能硬件</span>
+                      </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        <span>服务</span>
+                      </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        <span>社区</span>
+                      </a>
+                </li>
+              </ul>
+            </div>
+            <div class="header-search">
+              <div class="search-form">
+                <input type="text">
+                <button><i class="iconfont icon-sousuotianchong"></i></button>
+                <div class="search-text">
+                  <span>小米8</span>
+                  <span>小米MIX 2S</span>
+                </div>
+              </div>
+            </div>
+        </div>
       </div>
     </div>
 </body>
