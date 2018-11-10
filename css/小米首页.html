@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <link rel="stylesheet" href="http://at.alicdn.com/t/font_747925_94xeg63klxd.css">
+  <link rel="stylesheet" href="http://at.alicdn.com/t/font_747925_koomadjijjp.css">
   <style>
     *{
       margin: 0;
@@ -16,6 +16,11 @@
     }
     li{
       list-style: none;
+    }
+    .clearfix::after{
+      content: "";
+      display: block;
+      clear: both;
     }
     .top-nav{
       font-size: 12px;
@@ -140,6 +145,74 @@
     }
 
     /* site-header end */
+    /* home-hero  start*/
+    .hh-contnet{
+      width: 1226px;
+      margin:20px auto;
+      height: 460px;
+      background-color: blue;
+      position: relative;
+    }
+    .hh-nav{
+      width: 235px;
+      height: 100%;
+      background-color: rgba(0,0,0,.6);
+      position: relative;
+      z-index: 10;
+    }
+    .hh-nav ul{
+      padding: 20px 0;
+    }
+    .hh-nav a{
+      display: block;
+      color: #fff;
+      font-size: 14px;
+      padding:0 30px;
+      height: 42px;
+      line-height: 42px;
+    }
+    .hh-nav a:hover{
+      background-color: #ff6700;
+    }
+    .hh-nav i{
+      float: right;
+    }
+    .hh-slider{
+      position: absolute;
+      top:0;
+      left: 0;
+    }
+    .hh-slider,.hh-slider img{
+      width: 100%;
+      height: 100%;
+    }
+    .arry-btn div{
+      width: 40px;
+      height: 70px;
+      
+      position: absolute;
+      text-align: center;
+      line-height: 70px;
+      color: #ddd;
+      top:50%;
+      margin-top: -35px;
+    }
+    .arry-btn div i{
+      font-size: 30px;
+    }
+    .arry-btn div:hover{
+      color: #fff;
+      background-color: rgba(0,0,0,.3);
+    }
+    .ui-next{
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+    .ui-prev{
+      border-radius: 0 3px 3px 0;
+      left: 235px;
+    }
+    /* home-hero  end*/
   </style>
 </head>
 <body>
@@ -172,7 +245,7 @@
         </div>
         
       </div>
-      <div class="site-header">
+      <div class="site-header clearfix">
         <div class="sh-content">
             <div class="header-logo">
               <a href="https://www.mi.com/index.html"></a>
@@ -246,6 +319,81 @@
                 </div>
               </div>
             </div>
+        </div>
+      </div>
+      <div class="home-hero">
+        <div class="hh-contnet">
+          <div class="hh-nav">
+            <ul>
+              <li>
+                <a href="javascript:void(0);">
+                  手机 电话卡
+                  <i class="iconfont icon-right"></i>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);">
+                  手机 电话卡
+                  <i>></i>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);">
+                  手机 电话卡
+                  <i>></i>
+                </a>
+              </li>
+              <li>
+                  <a href="javascript:void(0);">
+                    手机 电话卡
+                    <i>></i>
+                  </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                      手机 电话卡
+                      <i>></i>
+                    </a>
+                  </li>
+                  <li>
+                      <a href="javascript:void(0);">
+                        手机 电话卡
+                        <i>></i>
+                      </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">
+                          手机 电话卡
+                          <i>></i>
+                        </a>
+                      </li>
+                      <li>
+                          <a href="javascript:void(0);">
+                            手机 电话卡
+                            <i>></i>
+                          </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">
+                              手机 电话卡
+                              <i>></i>
+                            </a>
+                          </li>
+                          <li>
+                              <a href="javascript:void(0);">
+                                手机 电话卡
+                                <i>></i>
+                              </a>
+                            </li> 
+            </ul>
+          </div>
+          <div class="hh-slider">
+            <img src="./img/slider.jpg" alt="">
+            <div class="arry-btn">
+              <div class="ui-prev"><</div>
+              <div class="ui-next"><i class="iconfont icon-right"></i></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

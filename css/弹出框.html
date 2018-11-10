@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .model-bg{
+    background-color: #000;
+    opacity: 0.3;  
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    }
+    .model-box{
+      width: 500px;
+      height: 300px;
+      border: 1px solid #333;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top:-150px;
+      margin-left: -250px;
+    }
+    .model-box .title{
+      padding:10px;
+      background-color: #333;
+      color: #fff;
+    }
+    .model-close{
+      float: right;
+    }
+    
+  </style>
+</head>
+<body>
+  <h1>这是一段文字</h1>
+  <div class="model-bg"></div>
+  <div class="model-content">
+    <div class="model-box">
+      <div class="title">
+        <span>登录</span>
+        <span class="model-close">X</span>
+      </div>
+      <div class="content">
+        <span>用户名</span>
+        <input type="text">
+        <input type="button" value="登录">
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

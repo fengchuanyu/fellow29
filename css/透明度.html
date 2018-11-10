@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .bg-color,.bg-img{
+      width: 300px;
+      height: 300px;
+    }
+
+    .bg-color{
+      /* background-color: #000; */
+      color: #fff;
+      background-color: rgba(0,0,0,0.3);
+      position: absolute;
+      /* 透明度 0-1 */
+      /* opacity: 0.3; */
+
+      /* filter:alpha(opacity=50);   兼容ie678*/
+    }
+    .bg-img{
+      background-image: url('./img/mimg.jpg');
+      background-position: center;
+    }
+    .content{
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <div class="bg-color">
+      这是一个透明的标签
+    </div>
+    <div class="bg-img"></div>
+  </div>
+
+</body>
+</html>
