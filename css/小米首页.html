@@ -213,6 +213,76 @@
       left: 235px;
     }
     /* home-hero  end*/
+    /* bottom start */
+    .bottom{
+      width: 1226px;
+      margin:0 auto;
+    }
+    .bottom-left{
+      background-color: #5f5750;
+      width: 234px;
+      height: 170px;
+      float: left;
+    }
+    .bottom-left li{
+      float: left;
+      width: 70px;
+      height: 82px;
+      padding: 0 3px;
+      position: relative;
+    }
+    .bottom-left li a{
+      display: block;
+      color: rgba(255,255,255,0.7);
+      font-size: 12px;
+      padding-top: 18px;
+      text-align: center;
+    }
+    .bottom-left li i{
+      display: block;
+      font-size: 24px;
+    }
+    .bottom-left li::before,.bottom-left li::after{
+      content:"";
+      position: absolute;
+      background-color: #665e57;
+    }
+    .bottom-left li::before{
+      top: -1px;
+      left: 6px;
+      width: 64px;
+      height: 1px;
+    }
+    .bottom-left li::after{
+      top: 6px;
+      left: 0;
+      width: 1px;
+      height: 70px;
+    }
+    .bottom-left li.top::before{
+      display: none;
+    }
+    .bottom-left li.left::after{
+      display: none;
+    }
+    .bottom-right{
+      float: left;
+      margin-left: 14px;
+    }
+    .bottom-right li{
+      float: left;
+      width: 316px;
+      height: 170px;
+      margin-left: 15px;
+    }
+    .bottom-right li img{
+      width: 100%;
+      height: 100%;
+    }
+    .bottom-right li.first{
+      margin-left: 0;
+    }
+    /* bottom end */
   </style>
 </head>
 <body>
@@ -395,6 +465,55 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="bottom clearfix">
+      <div class="bottom-left">
+        <ul>
+          <li class="top left">
+            <a href="javascript:void(0);">
+              <i class="iconfont icon-car"></i>
+              选购手机
+            </a>
+          </li>
+          <li class="top">
+              <a href="javascript:void(0);">
+                  <i class="iconfont icon-car"></i>
+                  选购手机
+                </a>
+          </li>
+          <li class="top">
+              <a href="javascript:void(0);">
+                  <i class="iconfont icon-car"></i>
+                  选购手机
+                </a>
+          </li>
+          <li class="left">
+              <a href="javascript:void(0);">
+                  <i class="iconfont icon-car"></i>
+                  选购手机
+                </a>
+          </li>
+          <li>
+              <a href="javascript:void(0);">
+                  <i class="iconfont icon-car"></i>
+                  选购手机
+                </a>
+          </li>
+          <li>
+              <a href="javascript:void(0);">
+                  <i class="iconfont icon-car"></i>
+                  选购手机
+                </a>
+          </li>
+        </ul>
+      </div>
+      <div class="bottom-right">
+        <ul>
+          <li class="first"><img src="./img/xmad1.jpg" alt=""></li>
+          <li><img src="./img/xmad2.jpg" alt=""></li>
+          <li><img src="./img/xmad3.jpg" alt=""></li>
+        </ul>
       </div>
     </div>
 </body>
