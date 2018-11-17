@@ -7,6 +7,7 @@
   <title>Document</title>
   <style>
     .face{
+      float: left;
       margin: 16px;
       padding: 4px;
       background-color: #e7e7e7;
@@ -26,16 +27,111 @@
     }
     .face{
       display: flex;
-      
+      /* justify-content: center; 水平对齐方式
+      align-items: center;  垂直对齐方式*/
+      justify-content: space-between;
     }
-    
-    
+    .face2 .item-2,.face3 .item-2{
+      align-self: flex-end;
+    }
+    .face3 .item-3{
+      align-self: center;
+    }
+    .face4{
+      flex-wrap: wrap;
+    }
+    .face4 .column{
+      display: flex;
+      flex-basis: 100%;
+      justify-content: space-between;
+    }
+    .face4 .column2{
+      align-items: flex-end;
+    }
+    /* face 5 */
+    .face5{
+      flex-wrap: wrap;
+    }
+    .face5 .column{
+      display: flex;
+      flex-basis: 100%;
+      justify-content: space-between;
+    }
+    .face5 .column2{
+      align-items: flex-end;
+    }
+    .face5 .column3{
+      justify-content: center;
+    }
+    /* face 6 */
+    /* face 5 */
+    .face6{
+      flex-wrap: wrap;
+    }
+    .face6 .column{
+      display: flex;
+      flex-basis: 100%;
+      justify-content: space-between;
+    }
+    .face6 .column2{
+      align-items: flex-end;
+    }
+    .face6 .column3{
+      justify-content: space-between;
+    }
   </style>
 </head>
 <body>
-  <div class="face">
-    
+  <!-- 二 -->
+  <div class="face face2">
     <span></span>
+    <span class="item-2"></span>
   </div>
+  <!-- 三 -->
+  <div class="face face3">
+    <span></span>
+    <span class="item-3"></span>
+    <span class="item-2"></span>
+  </div>
+  <!-- 四 -->
+  <div class="face face4">
+    <div class="column">
+      <span></span>
+      <span></span>
+    </div>
+    <div class="column column2">
+      <span></span>
+      <span></span>
+    </div> 
+  </div>
+  <!-- 五 -->
+  <div class="face face5">
+    <div class="column">
+      <span></span>
+      <span></span>
+    </div>
+    <div class="column column3">
+      <span></span>
+    </div>
+    <div class="column column2">
+      <span></span>
+      <span></span>
+    </div> 
+  </div>
+  <!-- 六 -->
+  <div class="face face6">
+      <div class="column">
+        <span></span>
+        <span></span>
+      </div>
+      <div class="column column3">
+        <span></span>
+        <span></span>
+      </div>
+      <div class="column column2">
+        <span></span>
+        <span></span>
+      </div> 
+    </div>
 </body>
 </html>
