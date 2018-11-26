@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function fibonacci(num){
+      if(num<=2){
+        return 1
+      }else{
+        var a = 1,b=1,temp=0;
+        for(var i=3;i<=num;i++){
+          temp = a + b;
+          a = b;
+          b = temp;
+        }
+        return temp;
+      }
+    }
+
+    function fibonacci2(num){
+      if(num<=2){
+        return 1;
+      }else{
+        return fibonacci2(num-2)+fibonacci2(num-1);
+      }
+    }
+    
+    console.log(fibonacci2(7));
+    
+    // 1 1 2 3 5 8 13
+    //     a b
+  </script>
+</body>
+</html>

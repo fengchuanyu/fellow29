@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var winNum = 0;
+    var playNum = 0;
+    function foo(){
+      var arr = [];
+      playNum++;
+      for(var i=0;i<3;i++){
+        var ranNum = Math.random();
+        ranNum =Math.floor(ranNum*9)+1;
+        arr.push(ranNum);
+      }
+      console.log(arr);
+      if(arr.indexOf(8)!=-1){
+        console.log("胜利");
+        winNum++
+      }
+    }
+    
+    var a = 1;
+    var isStop= true;
+    while(isStop){
+      foo();
+      console.log('获胜率为:'+winNum/playNum);
+      isStop = window.confirm("是否继续");
+    }
+    
+    
+
+  </script>
+</body>
+</html>
