@@ -9,9 +9,12 @@
     div{
       display: none;
     }
-    /* #box{
-      display: block;
-    } */
+    #box{
+      width: 100px;
+      height: 200px;
+      position: absolute;
+      background-color: #ddd;
+    }
   </style>
 </head>
 <body>
@@ -20,7 +23,10 @@
     var oBox = document.getElementById("box");
     document.oncontextmenu = function(e){
       console.log(e.clientX,e.clientY);
+      
       oBox.style.display = 'block';
+      oBox.style.top = e.clientY+"px";
+      oBox.style.left = e.clientX+"px";
       e.preventDefault();//阻止默认行为
       // return false;//阻止默认行为
       
