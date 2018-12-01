@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // window.document.write("hello world");
+    // var a = 10;
+    // console.log(this.a);
+    // console.log(window.a);
+    
+
+    // var timer = setInterval(function(){
+    //   console.log("setInterval="+Math.random());
+    // },1000)
+    // var timer2=setTimeout(function(){
+    //   clearInterval(timer)
+    // },5000);
+    // clearTimeout(timer2);
+
+
+    // event loop
+    var a = 10;
+    setTimeout(function(){//异步
+      console.log("setTimeout ="+a);//
+    },0);  
+    a=11;
+    console.log("default="+a);//
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .a{
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="b"></h1>
+  <button id="btn">按钮</button>
+  <script>
+    var oH1 = document.getElementById('b');
+    var oBtn = document.getElementById("btn");
+    oBtn.onclick = function(){
+      oH1.innerHTML = "<i class='a'>hello world!</i>";
+    }
+
+    // oH1.innerText = "<i>hello world!</i>";
+    // oH1.innerHTML = "<i>hello world!</i>";
+
+    // setTimeout(function(){
+    //   oH1.innerHTML = "<i class='a'>hello world!</i>"
+    // },3000)
+  </script>
+</body>
+</html>
