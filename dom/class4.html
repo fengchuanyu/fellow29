@@ -5,10 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <style>
+    .box{
+      width: 200px;
+      height: 200px;
+      background-color: #ddd;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -100px;
+      margin-top: -100px;
+      text-align: center
+    }
+  </style>
 </head>
 <body>
+  <div class="box">
+    <h1 id="num">100</h1>
+    <button id="btn">开始</button>
+  </div>
   <script>
-    
+    var oNum = document.getElementById("num");
+    var oBtn = document.getElementById("btn");
+    var timer = null;
+    oBtn.onclick = function(){
+      console.log(this.innerText);
+      if(this.innerText=="开始"){
+        this.innerText="暂停";
+        timer = setInterval(function(){
+          oNum.innerText--;
+        },1000)
+      }else{
+        this.innerText="开始";
+        clearInterval(timer)
+      }
+      
+    }
+
+
+
+
+
+
+
+    // function foo(){
+    //   console.log(this);
+    // }
+    // foo();
   </script>
 </body>
 </html>
