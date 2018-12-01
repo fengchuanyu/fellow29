@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function fibonacci(num){
+      let arr = [1,1];
+        var a = 1,b=1,temp=0;
+        for(var i=3;i<=num;i++){
+          temp = a + b;
+          a = b;
+          b = temp;
+          arr.push(temp);
+        }
+      return(arr);
+    }
+    var fib = fibonacci(40);
+    var sign = 0;
+    for(var i=fib.length-1;i>=0;i--){
+      sign++;
+      document.write(fib[i]+",");
+      if(sign%6==0)document.write("</br>");
+    }
+  
+  </script>
+</body>
+</html>

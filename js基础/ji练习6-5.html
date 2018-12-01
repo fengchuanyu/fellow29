@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+   var str1 = '123456';
+   var str2 = 'abcdefghijk';
+   var nstr = "";
+   function Merge(str1,str2){
+     var len = 0;
+     var otherStr = "";
+    if(str1.length > str2.length){
+      len = str2.length;
+      otherStr = str1.substr(len,str1.length);
+    }else{
+      len = str1.length;
+      otherStr = str2.substr(len,str2.length);
+    }
+    for(var i=0;i<len;i++){
+      nstr += str1.charAt(i)+str2.charAt(i);
+    }
+
+    console.log(nstr+otherStr);
+    
+   }
+   Merge(str1,str2);
+
+  </script>
+</body>
+</html>

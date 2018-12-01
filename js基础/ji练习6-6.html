@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  var arr = [];
+  var sum = 0;
+  var arr2 = [];
+  for(var i=0;i<7;i++){
+    arr.push(window.prompt("请输入第门"+(i+1)+"课成绩"));
+    sum+=parseInt(arr[i]);
+    if(arr[i]<60)arr2.push(arr[i])
+  }
+  document.write("7门课的平均成绩是"+sum/7);
+  document.write("不及格的有"+arr2);
+
+  
+  </script>
+</body>
+</html>
