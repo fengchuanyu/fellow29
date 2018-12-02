@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <ul id="ul">
+    <li>1</li>
+    <li>2</li>
+    <li id="li" class="abc" data-src="local" data-name="li1">3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+  <script>
+    var nNode = document.createElement("li");
+    nNode.innerText = 6;
+    var oUl = document.getElementById("ul");
+    var oLi = document.getElementById("li");
+    var aLi = oUl.getElementsByTagName("li");
+
+    
+    console.log(oLi.dataset.src);
+    
+    // console.log(oLi.className);
+    
+    // oLi.classList.add("active");
+
+    // oLi.classList.remove("active");
+    // oLi.className += " active";
+    // console.log(oLi.className);
+    
+
+
+    // console.log(aLi.item(1));
+    
+    // console.log();
+    // oUl.appendChild(nNode);
+    // oUl.removeChild(nNode);
+
+    // oUl.replaceChild(nNode,oLi);
+    // oUl.insertBefore(nNode,oLi);
+    
+  </script>
+</body>
+</html>
