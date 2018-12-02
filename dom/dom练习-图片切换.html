@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .clearfix::after{
+      content: "";
+      display: block;
+      clear: both;
+    }
+    li{
+      list-style: none;
+    }
+    .box{
+      position: relative;
+      margin:100px auto;
+      width: 600px;
+      border:1px solid #ddd;
+    }
+    .content{
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+    .content img{
+      width: 220px;
+    }
+    .nav ul{
+      width: 100%;
+      display: flex;
+    }
+    .nav li{
+      float: left;
+      flex-grow: 1;
+      height:110px;
+      overflow: hidden;
+      border-right: 1px solid #ddd;
+      text-align: center;
+    }
+    .nav li:last-child{
+      border-right: 0;
+    }
+    .nav li img{
+      width: 120px;
+    }
+    .btn{
+      position: absolute;
+      top:100px;
+      width: 100%;
+    }
+    .btn div:first-child{
+      float: left;
+    }
+    .btn div:nth-child(2){
+      float: right;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="content">
+      <img id="big-img" src="./image/slider1.jpg" alt="">
+    </div>
+    <div class="btn">
+      <div>&lt;</div>
+      <div>&gt;</div>
+    </div>
+    <div class="nav">
+      <ul class="clearfix">
+        <li><img class="nav-img" src="./image/slider1.jpg" alt=""></li>
+        <li><img class="nav-img" src="./image/slider2.jpg" alt=""></li>
+        <li><img class="nav-img" src="./image/slider3.jpg" alt=""></li>
+        <li><img class="nav-img" src="./image/slider4.jpg" alt=""></li>
+      </ul>
+    </div>
+  </div>
+  <script>
+    var navImg = document.getElementsByClassName("nav-img");
+    var bigImg = document.getElementById('big-img');
+    var aBtn = document.getElementsByClassName("btn")[0].getElementsByTagName("div");
+    var nowIndex = 0;
+    
+    aBtn[0].onclick = function(){
+      if(nowIndex == 0){
+        showImg(3)
+      }else{
+        showImg(--nowIndex)
+      }
+      
+    }
+    aBtn[1].onclick = function(){
+      
+      if(nowIndex==3){
+        showImg(0)
+      }else{
+        showImg(++nowIndex);
+      }
+    }
+
+    function showImg(index){
+      var arr = [];
+      for(var i=0;i<navImg.length;i++){
+        arr.push(navImg[i].getAttribute("src"))
+      }
+      bigImg.setAttribute("src",arr[index]);
+      nowIndex = index;
+    }
+    
+    for(var i=0;i<navImg.length;i++){
+      navImg[i].index = i;
+      navImg[i].onmouseover = function(){
+        // var attrSrc = this.getAttribute("src")
+        // bigImg.setAttribute("src",attrSrc);
+        showImg(this.index);
+      }
+    }
+    setInterval(function(){
+      aBtn[1].onclick();
+    },1000)
+  </script>
+</body>
+</html>
