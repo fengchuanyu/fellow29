@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+    }
+    .box{
+      margin:100px auto;
+      width: 450px;
+      border:1px solid #000;
+    }
+    .nav{
+      height: 40px;
+      background-color: #000;
+    }
+    .nav ul{
+      padding: 0;
+    }
+    .nav li{
+      list-style: none;
+      float: left;
+      height: 40px;
+      color: #fff;
+      line-height: 40px;
+      padding: 0 10px;
+    }
+    .nav .active{
+      background-color: #ddd;
+      color: #000
+    }
+    .content ul{
+      display: none;
+    }
+    .content .active{
+      display: block
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="nav">
+      <ul id="nav">
+        <li class="active">第一节课</li>
+        <li>第二节课</li>
+        <li>第三节课</li>
+      </ul>
+    </div>
+    <div id="list" class="content">
+      <ul class="active">
+        <li>网页特效原理分析</li>
+        <li>网页特效原理分析</li>
+        <li>网页特效原理分析</li>
+        <li>网页特效原理分析</li>
+        <li>第一页</li>
+      </ul>
+      <ul>
+        <li>第二页</li>
+        <li>改变网页背景颜色</li>
+      </ul>
+      <ul>
+        <li>第三页</li>
+        <li>JavaScript组成：ECMAScript、DOM、BOM，JavaScript兼容性来源</li>
+      </ul>
+    </div>
+  </div>
+  <script>
+    var aNav = document.getElementById("nav").getElementsByTagName("li");
+    var aList = document.getElementById("list").getElementsByTagName("ul");
+    console.log(aNav);
+    for(var i=0;i<aNav.length;i++){
+      aNav[i].index = i;
+      aNav[i].onmouseover = function(){
+        for(var j=0;j<aNav.length;j++){
+          aNav[j].className="";
+          aList[j].className = "";
+        }
+        this.className = "active";
+        aList[this.index].className = 'active';
+      }
+    }
+  </script>
+</body>
+</html>
