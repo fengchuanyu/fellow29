@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+    <div id="box">
+      <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+      </ul>
+    </div>
+  <script>
+    // var obj = {
+      
+    // }
+    // obj.index = 0;
+
+    // console.log(obj.index);
+    
+    var aLi = document.getElementsByTagName("li");
+    for(var i=0;i<aLi.length;i++){
+      (function(i){
+        aLi[i].onclick = function(){
+          console.log(i);
+        }
+      })(i)
+      // aLi[i].index = i;
+      // aLi[i].onclick = function(){
+      //   console.log(this.index);
+      // }
+    }
+  </script>
+</body>
+</html>
