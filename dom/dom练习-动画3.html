@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .box{
+      position: relative;
+      border:1px solid #000;
+      height: 30px;
+      width: 200px;
+      border-radius: 5px;
+      color: red;
+      overflow: hidden;
+    }
+    #prog{
+      width: 0;
+      height: 30px;
+      background-color: blue;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div id="prog"></div>
+    <span id="num">0</span>%
+  </div>
+  <button id="btn">按钮</button>
+  <script>
+    var oBtn = document.getElementById("btn");
+    var oNum = document.getElementById("num");
+    var oProg = document.getElementById("prog");
+    oBtn.onclick = function(){
+      requestAnimationFrame(run);      
+    }
+    function run(){
+      oNum.innerText++;
+      oProg.style.width = oProg.offsetWidth+2+"px";
+      if(oProg.offsetWidth<200){
+        requestAnimationFrame(run);
+      }
+      
+    }
+  </script>
+</body>
+</html>
