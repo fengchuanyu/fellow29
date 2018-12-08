@@ -26,8 +26,16 @@
       var moveX = e.clientX - this.offsetLeft;
       var moveY = e.clientY - this.offsetTop;
       document.onmousemove = function(e){
-        oBox.style.top = e.clientY - moveY + "px";
-        oBox.style.left = e.clientX -moveX + "px";
+        var thisTop = e.clientY - moveY;
+        var thisLeft = e.clientX -moveX;
+        if(thisTop <= 0){
+          thisTop = 0;
+        }
+        if(thisLeft <=0){
+          thisLeft = 0;
+        }
+        oBox.style.top = thisTop + "px";
+        oBox.style.left =thisLeft  + "px";
       }
     }
     oBox.onmouseup = function(){

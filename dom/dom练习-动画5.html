@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #small-img,#small-img img{
+      width: 400px;
+      height: 400px;
+      
+    }
+    #big-img img{
+      width: 800px;
+      height: 800px;
+      
+    }
+    #big-img{
+      width: 400px;
+      height: 400px;
+      overflow: hidden;
+    }
+    #small-img,#big-img{
+      float: left;
+      margin-right: 30px;
+      position: relative;
+    }
+    
+    #move{
+      top: 0;
+      left: 0;
+      width: 200px;
+      height: 200px;
+      background-color: rgba(255,255,255,.5);
+      position: absolute;
+    }
+    *{
+      margin: 0;
+    }
+    #big-img img{
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <div id="small-img">
+    <img src="./image/niu.png" alt="">
+    <div id="move"></div>
+  </div>
+  <div id="big-img">
+    <img id="bImg" src="./image/niu.png" alt="">
+  </div>
+  <script>
+    var oMove = document.getElementById("move");
+    var smallImg = document.getElementById("small-img")
+    var bigImg = document.getElementById("bImg");
+    smallImg.onmousemove = function(e){
+      var moveLeft = e.clientX - 100;
+      var moveTop = e.clientY - 100;
+      if(moveLeft<=0){
+        moveLeft = 0;
+      }
+      if(moveTop<=0){
+        moveTop = 0;
+      }
+      if(moveLeft>=200){
+        moveLeft=200
+      }
+      if(moveTop>=200){
+        moveTop = 200;
+      }
+      oMove.style.left = moveLeft + "px";
+      oMove.style.top = moveTop + "px"
+      bigImg.style.left = - moveLeft*2 +"px";
+      bigImg.style.top = -moveTop*2 + "px"
+    }
+  </script>
+</body>
+</html>
