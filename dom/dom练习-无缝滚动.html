@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding:0;
+    }
+    .box{
+      border: 1px solid #333;
+      width: 430px;
+      height: 100px;
+      padding:10px 0;
+      margin:100px auto;
+      position: relative;
+      overflow: hidden;
+    }
+    .box ul{
+      width: 550px;
+      position: absolute;
+      left: 0;
+    }
+    .box li{
+      list-style: none;
+      float: left;
+      width: 100px;
+      height: 100px;
+      background-color: #000;
+      margin-right: 10px;
+      color: #fff;
+      text-align: center;
+      line-height: 100px;
+    }
+    .clearfix::after{
+      content: "";
+      display: block;
+      clear: both;
+    }
+    .btn-bar{
+      text-align: center
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <ul id="list-content" class="clearfix">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+    </ul>
+  </div>
+  <div class="btn-bar">
+    <button id="left">向左</button>
+    <button id="right">向右</button>
+  </div>
+  <script>
+    var oLeft = document.getElementById("left");
+    var oRight = document.getElementById("right");
+    var oContent = document.getElementById("list-content");
+    var dir = 10
+
+    oContent.innerHTML+=oContent.innerHTML;
+    oContent.style.width = oContent.offsetWidth*2+"px";
+
+    setInterval(function(){
+      
+      if(oContent.offsetLeft<= -oContent.offsetWidth/2){
+        oContent.style.left = 0+"px";
+      }
+      if(oContent.offsetLeft>0){
+        oContent.style.left = -oContent.offsetWidth/2 +"px";
+      }
+      oContent.style.left = oContent.offsetLeft - dir + "px";
+    },50)
+
+    oRight.onclick = function(){
+      dir = -10
+    }
+    oLeft.onclick = function(){
+      dir = 10
+    }
+
+  </script>
+</body>
+</html>
