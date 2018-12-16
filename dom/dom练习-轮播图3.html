@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding:0;
+    }
+    html{
+      background-color: #000;
+    }
+    li{
+      list-style: none;
+    }
+    .box{
+      position: relative;
+      width: 490px;
+      height: 170px;
+      border:5px solid #fff;
+      margin:0 auto;
+      overflow: hidden;
+    }
+    .img-bar li{
+      float: left;
+    }
+    
+    .left-btn{
+      position: absolute;
+      left: 10px;
+      bottom: 10px;
+      color: #fff
+    }
+    .left-btn div ,.right-btn li{
+      float: left;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: #F90;
+      text-align: center;
+      line-height: 20px;
+      margin-right: 10px;
+      font-size: 12px;
+      opacity: 0.5;
+      color: #fff
+    }
+    .left-btn div:hover,.right-btn li:hover{
+      cursor: pointer;
+    }
+    .right-btn{
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+    }
+    
+    .img-bar ul{
+      position: absolute;
+      width: 2450px;
+    }
+    .box .right-btn .active{
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="img-bar">
+      <ul>
+        <li class="active"><img src="./image/01.jpg" alt=""></li>
+        <li><img src="./image/02.jpg" alt=""></li>
+        <li><img src="./image/03.jpg" alt=""></li>
+        <li><img src="./image/04.jpg" alt=""></li>
+        <li><img src="./image/05.jpg" alt=""></li>
+      </ul>
+    </div>
+    <div class="left-btn">
+      <div>&lt;</div>
+      <div>&gt;</div>
+    </div>
+    <div class="right-btn">
+      <ul>
+        <li class="active">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+      </ul>
+    </div>
+  </div>
+  <script>
+    var oBox = document.getElementsByClassName("box")[0];
+    var aBtn = document.getElementsByClassName('right-btn')[0].getElementsByTagName("li");
+    var aImg = document.getElementsByClassName("img-bar")[0].getElementsByTagName("li");
+    var arrBtn = document.getElementsByClassName("left-btn")[0].getElementsByTagName("div");
+    var oImgBar = document.getElementsByClassName("img-bar")[0].getElementsByTagName("ul")[0];
+    var nowIndex = 0,timer = null,imgLoop = null,isRun = true;
+
+    var firstLi = oImgBar.firstElementChild.cloneNode(true);
+    firstLi.className = "";
+    oImgBar.appendChild(firstLi);
+    oImgBar.style.width = oImgBar.offsetWidth+490+"px"
+
+    // 页面初始化的时候调用轮播方法
+    run();
+    // 左右按钮绑定事件 
+    arrBtn[0].onclick = function(){
+      changeImg(nowIndex-1);
+    }
+    arrBtn[1].onclick = function(){
+      changeImg(nowIndex+1);
+    }
+    // 数字按钮绑定事件
+    for(var i=0;i<aBtn.length;i++){
+      aBtn[i].index = i; //创建索引
+      aBtn[i].onmouseover = function(){
+        changeImg(this.index);
+      }
+    }
+    // 切换图片
+    function changeImg(index){
+      // 判定是否移动图片  图片在移动过程中不允许二次触发
+      if(isRun){
+        // direction方向 -1为向左移动  1向右移动
+        var direction = -1;
+        // 利用两个索引判定方向
+        nowIndex > index ? direction = 1 : direction=-1;
+        // 图片已经准备开始移动 将状态值设置为false 不可再次触发
+        isRun =false;
+        // index 接受当前索引
+        // 越界处理
+        // nowIndex 全局变量 存储当前索引
+        nowIndex = index;
+        if(index == 5){
+          nowIndex = 0;
+          // direction = 1;
+        }
+        if(index == -1){
+          nowIndex = 4;
+          index = 4
+          // direction = -1;
+          oImgBar.style.left = -490*5+"px";
+        }
+        
+
+        // 循环便利所有图片和数字按钮 清除样式
+        for(var j = 0;j<aBtn.length;j++){
+          aBtn[j].className = "";
+        }
+
+        // 给当前图片和数组按钮添加选中样式
+        aBtn[nowIndex].className = "active"
+        
+        // 图片切换的动态效果
+        imgLoop = setInterval(function(){
+          // 判断是否移动到指定位置
+          console.log(index);
+          if(oImgBar.offsetLeft == -490*index){
+            clearInterval(imgLoop);
+            isRun = true;
+            if(index == 5){
+              oImgBar.style.left = 0 ;
+            }
+          }else{
+            oImgBar.style.left = oImgBar.offsetLeft + (direction*10) + "px"
+          }
+        },16)
+      }
+    }
+    
+    // 鼠标移入时停止定时函数
+    oBox.onmouseover = function(){
+      clearInterval(timer)
+    }
+
+    // 鼠标移出时创建定时函数
+    oBox.onmouseout = function(){
+      run();
+    }
+
+    // 定义自动轮播函数
+    function run(){
+      timer = setInterval(function(){
+        changeImg(nowIndex+1);
+      },3500)
+    }
+  </script>
+</body>
+</html>
