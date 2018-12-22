@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div{
+      width: 100px;
+      height: 100px;
+      background-color: #000;
+    }
+    .box1{
+      margin-bottom: 50px;
+      
+    }
+    .box2{
+      margin-top: 30px;
+      position: absolute;
+    }
+    .box3{
+      width: 300px;
+      height: 300px;
+      background-color: blue;
+      margin-top: 30px;
+      overflow: hidden;
+    }
+    .box4{
+      margin-top:50px;
+    }
+    .box5{
+      padding: 30px;
+      box-sizing: border-box;
+      
+    }
+  </style>
+</head>
+<body>
+  <!-- <div class="box1"></div>
+  <div class="box2"></div> -->
+  
+
+  <!-- <div class="box3">
+      <div class="box4"></div>
+  </div> -->
+
+  <div class="box5">
+
+  </div>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+  <script>
+  var box5 = document.getElementsByClassName("box5")[0];
+  var aEle = document.getElementsByTagName("ul")[0].children;
+  
+  console.log(aEle);
+  
+  </script>
+  
+</body>
+</html>
