@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #div1{
+      width: 600px;
+      height: 600px;
+      background-color: red;
+    }
+    #div2{
+      width: 400px;
+      height: 400px;
+      background-color:blue
+    }
+    #div3{
+      width: 200px;
+      height: 200px;
+      background-color:yellow;
+    }
+  </style>
+</head>
+<body>
+  <div id="div1">
+    <div id="div2">
+      <div id="div3"></div>
+    </div>
+  </div>
+  <script>
+    var oDiv1 = document.getElementById("div1");
+    var oDiv2 = document.getElementById("div2");
+    var oDiv3 = document.getElementById("div3");
+    // oDiv1.onclick = function(){
+    //   console.log('div1');
+    // }
+    // oDiv1.onclick = null
+    // oDiv2.onclick= function(){
+    //   console.log('div2');
+    // }
+    // oDiv3.onclick= function(){
+    //   console.log('div3');
+    // }
+
+
+    // function foo(){
+    //   console.log("div1");
+    // }
+    // oDiv1.addEventListener("click",foo)
+    // oDiv1.removeEventListener("click",foo)
+
+    oDiv1.addEventListener("click",function(){
+      console.log('div1');
+    },false)
+    oDiv2.addEventListener("click",function(){
+      console.log('div2');
+    },false)
+    oDiv3.addEventListener("click",function(e){
+      console.log('div3');
+      e.stopPropagation();
+    },false)
+    // oDiv1.addEventListener("click",function(){
+    //   console.log('div1');
+    // },true)
+    // oDiv2.addEventListener("click",function(){
+    //   console.log('div2');
+    // },true)
+    // oDiv3.addEventListener("click",function(){
+    //   console.log('div3');
+    // },true)
+
+    
+
+  </script>
+</body>
+</html>

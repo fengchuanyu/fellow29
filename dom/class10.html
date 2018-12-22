@@ -18,7 +18,8 @@
   <script>
     var oBox = document.getElementById("box");
     oBox.onmouseover = function(){
-        requestAnimationFrame(run);
+        requestAnimationFrame(run);//跟settimeout差不多 当屏幕刷新的时候调用 后者时间是无法自行设置的
+        //他会使动画更流畅  跟屏幕的刷新率同步 所以视觉上看这
     } 
     function run(){
       oBox.style.width = oBox.offsetWidth + 10 + "px";
