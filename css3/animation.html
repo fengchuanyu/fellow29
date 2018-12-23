@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div{
+      margin:100px auto;
+      border-left:100px solid red;
+      border-top: 100px solid blue; 
+      border-right: 100px solid green; 
+      border-bottom: 100px solid yellow; 
+      width: 0;
+      /* transition: all 1s ease-in-out; */
+      /* animation-name: test;
+      animation-duration: 3s;
+      animation-timing-function: ease-in-out; */
+      /* animation-fill-mode: forwards; */
+      /* animation-iteration-count: infinite */
+      animation: test 3s ease-in-out infinite;
+    }
+    /* div:hover{
+      transform: rotate(260deg)
+    } */
+    @keyframes test{
+      0%{
+        transform: rotate(0)
+      }
+      100%{
+        transform: rotate(360deg)
+      }
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+</body>
+</html>
