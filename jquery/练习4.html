@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin:0;
+    }
+    .clearfix::after{
+      content: "";
+      display: block;
+      clear: both;
+    }
+    .container{
+      border: 1px solid #000;
+      width: 450px;
+      margin:0 auto;
+    }
+    .top-nav{
+      background-color: #000;
+      border-bottom: 1px solid #000;
+    }
+    .top-nav ul{
+      padding: 0
+    }
+    .top-nav li{
+      height: 40px;
+      line-height: 40px;
+      padding: 0 20px;
+      color: #fff;
+      float: left;
+      list-style: none;
+    }
+    .top-nav .active{
+      background-color: #ddd;
+      color: #000;
+    }
+    .content ul{
+      display: none;
+    }
+    .content .active{
+      display: block
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="container">
+    <div class="top-nav">
+      <ul class="nav-ul clearfix">
+        <li class="active">第一课</li>
+        <li>第二课</li>
+        <li>第三课</li>
+      </ul>
+    </div>
+    <div class="content">
+      <ul class="active">
+        <li>网页特效原理分析</li>
+        <li>网页特效原理分析</li>
+        <li>网页特效原理分析</li>
+        <li>网页特效原理分析</li>
+        <li>第一页</li>
+      </ul>
+      <ul>
+        <li>第二页</li>
+        <li>改变网页背景颜色</li>
+      </ul>
+      <ul>
+        <li>第三页</li>
+        <li>JavaScript组成：ECMAScript、DOM、BOM，JavaScript兼容性来源</li>
+      </ul>
+    </div>
+  </div>
+  <script src="./js/jquery-3.3.1.min.js"></script>
+  <script>
+    $(".nav-ul li").click(function(){
+      $(this).add($(".content ul:eq("+$(this).index()+")")).addClass("active").siblings().removeClass("active");
+      // $(".content ul:eq("+$(this).index()+")").addClass("active").siblings().removeClass("active");
+    })
+  </script>
+</body>
+</html>
