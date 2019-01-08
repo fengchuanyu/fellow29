@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/jquery-3.3.1.min.js"></script>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+    }
+    span.fot { color: red; font-size: 120%; font-style: italic; }
+  </style>
+</head>
+<body>
+    <div>
+        <span>Corey,</span>
+        <span>Yehuda,</span>
+        <span>Adam,</span>
+        <span>Todd</span>
+      </div>
+      <div>
+        <b>Nobody,</b>
+        <span>Jörn,</span>
+        <span>Scott,</span>
+        <span>Timo</span>
+    </div>
+  <script>
+    $("span:first-of-type").addClass("fot");
+  </script>
+</body>
+</html>

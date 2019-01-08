@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/jquery-3.3.1.min.js"></script>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+    }
+    span.fot { color: red; font-size: 120%; font-style: italic; }
+  </style>
+</head>
+<body>
+  <!-- <div id="box">hello</div> -->
+  <input type="checkbox" name="hobby" value="01">篮球
+  <input type="button" id="btn" value="按钮">
+  <script>
+    // var oBox = document.getElementById("box");
+    // oBox.setAttribute("test","abc");
+    // $("#box").attr("test2","abcd")
+    // console.log($("#box").attr("test2"));
+
+    // $("#box").prop("test2","abcd")
+    // console.log($("#box").prop("test2"));
+    $("#btn").click(function(){
+      $("[type=checkbox]").prop("checked",true);
+    });
+    console.log($("[name=hobby]:checked").val());
+    
+    
+  </script>
+</body>
+</html>

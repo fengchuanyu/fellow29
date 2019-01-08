@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/jquery-3.3.1.min.js"></script>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+    }
+    
+  </style>
+</head>
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3 <span>a</span></li>
+    <li></li>
+    <li>5</li>
+    <li>6</li>
+  </ul>
+  <script>
+    $("li:parent").css("color","red");
+  </script>
+</body>
+</html>
