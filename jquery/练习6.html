@@ -56,6 +56,27 @@
   </table>
   <script src="./js/jquery-3.3.1.min.js"></script>
   <script>
+      $(".editable").click(function(){
+        var thisVal = $(this).text();
+        var thisInp = $("<input type='text'>");
+        thisInp.val(thisVal);
+        if($(this).children().length == 0){
+          $(this).empty();
+          thisInp.appendTo(this);
+          thisInp.focus();
+        }
+      })
+
+      $(".editable").focusout(function(){
+        var thisVal = $(this).children("input").val();
+        $(this).text(thisVal);
+      })
+
+      $(".editable").keydown(function(e){
+        if(e.which == 13){
+          $(this).trigger("focusout");
+        }
+      })
 
   </script>
 </body>
