@@ -36,7 +36,9 @@
   </table>
   <script src="./js/jquery-3.3.1.min.js"></script>
   <script>
-    
+    $(".parent").click(function(){
+      $(this).toggleClass("selected").siblings(".child_"+this.id).toggleClass("is-show")
+    })
   </script>
 </body>
 </html>
