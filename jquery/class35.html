@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    
+  </style>
+</head>
+<body>
+    <input type="checkbox" value="a" name="chec">a
+    <input type="checkbox" value="b" name="chec" checked="checked">b
+    <input type="checkbox" value="c" name="chec">c
+    <input type="checkbox" value="d" name="chec">d
+  <script src="./js/jquery-3.3.1.min.js"></script>
+  <script>
+    $("input").each(function(index,ele){
+      if($(ele).is(":checked")){
+        console.log(ele.value);
+      }
+    })
+  </script>
+</body>
+</html>
