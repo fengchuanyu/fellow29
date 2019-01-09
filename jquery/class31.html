@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    
+  </style>
+</head>
+<body>
+    <div class="container">
+      <div class="inner first">Hello</div>
+      <div class="inner second">And</div>
+      <div class="inner third">Goodbye</div>
+    </div>
+      
+  
+  <script src="./js/jquery-3.3.1.min.js"></script>
+  <script>
+    // $('<div>New heading</div>').replaceAll('.inner');
+    $(".inner").replaceWith("<div>New heading</div>")
+  </script>
+</body>
+</html>

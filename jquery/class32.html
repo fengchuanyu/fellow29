@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .div1{
+      width: 600px;
+      height: 600px;
+      background-color: red;
+    }
+    .div2{
+      width: 400px;
+      height: 400px;
+      background-color: blue;
+    }
+    .div3{
+      width: 200px;
+      height: 200px;
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+    <!-- <div class="div1">
+      <div class="div2">
+        <div class="div3"></div>
+      </div>
+    </div> -->
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
+    </ul>
+    <button id="btn">按钮</button>
+  <script src="./js/jquery-3.3.1.min.js"></script>
+  <script>
+    $("ul").on("click","li",function(){
+      console.log("a");
+    })
+    // $("li").on("click",function(){
+    //   console.log("a");
+      
+    // })
+    // $("ul").click(function(e){
+    //   console.log(e.target);
+    // })
+    // $("li").click(function(){
+    //   console.log(1);
+    // })
+    $("#btn").click(function(){
+      $("ul").append("<li>test</li>");
+    })
+    // $(".div1").click(function(e){
+    //   console.log('div1');
+    //   console.log(e.target);
+    // })
+    // $(".div2").click(function(){
+    //   console.log('div2');
+    // })
+    // $(".div3").click(function(){
+    //   console.log('div3');
+    // })
+  </script>
+</body>
+</html>
