@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .box{
+      height: 5000px;
+      background-image: linear-gradient(to bottom,red,blue)
+    }
+    #btn{
+      position: fixed;
+      top:0;
+      left: 0;
+    }
+  </style>
+  <script src="./js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+  
+  <button id="btn">按钮</button>
+  <div class="box">
+
+  </div>
+<script>
+  $("#btn").click(function(){
+    $("html,body").animate({
+      scrollTop:0
+    },5000)
+  })
+</script>
+ 
+</body>
+</html>
