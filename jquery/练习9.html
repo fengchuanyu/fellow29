@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    table{ border:0;border-collapse:collapse;}
+    td{ font:normal 12px/17px Arial;padding:2px;width:100px;}
+    th{ font:bold 12px/17px Arial;text-align:left;padding:4px;border-bottom:1px solid #333;}
+    .even{ background:#FFF38F;}  /* 偶数行样式*/
+    .odd{ background:#FFFFEE;}  /* 奇数行样式*/
+    .selected{ background:#FF6500;color:#fff;}
+  </style>
+</head>
+<body>
+    <table>
+        <thead>
+        <tr><th> </th><th>姓名</th><th>性别</th><th>暂住地</th></tr>
+        </thead>
+        <tbody>
+        <tr class="even"><td><input type="radio" name="choice" value=""></td>
+          <td>张山</td><td>男</td><td>浙江宁波</td></tr>
+        <tr class="odd"><td><input type="radio" name="choice" value=""></td>
+          <td>李四</td><td>女</td><td>浙江杭州</td></tr>
+        <tr class="even selected"><td><input type="radio" name="choice" value="" checked="checked"></td>
+          <td>王五</td><td>男</td><td>湖南长沙</td></tr>
+        <tr class="odd"><td><input type="radio" name="choice" value=""></td>
+          <td>找六</td><td>男</td><td>浙江温州</td></tr>
+        <tr class="even"><td><input type="radio" name="choice" value=""></td>
+          <td>Rain</td><td>男</td><td>浙江杭州</td></tr>
+        <tr class="odd"><td><input type="radio" name="choice" value=""></td>
+          <td>MAXMAN</td><td>女</td><td>浙江杭州</td></tr>
+        </tbody>
+      </table>
+      <script src="./js/jquery-3.3.1.min.js"></script>
+      <script>
+        
+      </script>
+</body>
+</html>

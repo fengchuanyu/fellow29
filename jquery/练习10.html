@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/jquery-3.3.1.min.js"></script>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+    }
+    div{
+      height: 100vh;
+      background-color: red;
+    }
+    div:nth-child(2){
+      background-color: blue;
+    }
+    div:nth-child(3){
+      background-color: yellow;
+    }
+    ul{
+      position: fixed;
+      top:0;
+      left: 0;
+    }
+    ul li{
+      width: 100px;
+      height: 50px;
+      margin-left: 10px;
+      list-style: none;
+      float: left;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li><a href="#a">第一页</a></li>
+    <li><a href="#b">第二页</a></li>
+    <li><a href="#c">第三页</a></li>
+  </ul>
+  <div id="a">1</div>
+  <div id="b">2</div>
+  <div id="c">3</div>
+  <input type="checkbox" name="test" value="11">hello
+  <input type="checkbox" name="test" value="22">hello
+  <input type="checkbox" name="test" value="33">hello
+  <input type="checkbox" name="test" value="44">hello
+  <script>
+  // $("html,body").animate({
+  //   scrollTop:$("#b").offset().top
+  // },1000)   
+  
+  // console.log($("#b").offset().top);
+  $("a").click(function(){
+    var thisHas = $(this).attr("href").slice(1);
+    $("html,body").animate({
+      scrollTop:$("#"+thisHas).offset().top
+    },1000,function(){
+      $("div:target").css({
+        fontSize:100,
+        color:'red'
+      });
+    }) 
+  })
+         
+  </script>
+</body>
+</html>
