@@ -1,0 +1,52 @@
+*{
+  margin:0;
+  padding:0;
+}
+li{
+  list-style: none;
+}
+.slider{
+  height: 500px;
+  position: relative;
+}
+.slider-panner{
+  height: 500px;
+  width: 100%;
+  position: absolute;
+  transition: all 1s ease;
+  opacity: 0;
+}
+.slider-panner div{
+  width: 1230px;
+  margin: 0 auto;
+}
+.sp-1{
+  background:  rgb(232, 232, 232);
+}
+.sp-2{
+  background: rgb(0,0,0);
+}
+.sp-3{
+  background: rgb(232, 232, 232);
+}
+.active{
+  /* z-index: 2; */
+  opacity: 1;
+}
+.list-btn{
+  position: absolute;
+  z-index: 10;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%);
+}
+.list-btn li{
+  float: left;
+  height: 5px;
+  width: 25px;
+  margin-left: 5px;
+  background: rgba(0,0,0,.3);
+}
+.list-btn li.active{
+  background: rgba(255,255,255,.8);
+}
