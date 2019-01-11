@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+    }
+    .container{
+      max-width: 960px;
+      margin: 0 auto
+    }
+    .header,.nav,.footer{
+      width: 100%;
+      font-size: 25px;
+      height: 100px;
+      text-align: center;
+      line-height: 100px;
+      background-color: #8c8c8c;
+      margin-bottom: 10px;
+    }
+    .img-bar{
+      width: 100%;
+      padding-top:56.25%;
+      background: url("./img/01_s.jpg");
+      background-repeat: no-repeat;
+      background-size: 100%;
+    }
+    
+    .text-bar{
+      margin-bottom: 10px;
+
+    }
+    .text-bar .right{
+      float: right;
+      width: 30%;
+      /* margin-left: 5%; */
+      background-color: red;
+      min-height: 300px;
+    }
+    .text-bar .left{
+      float:left;
+      width: 65%;
+      min-height: 300px;
+      background-color: blue;
+    }
+    .text-bar div{
+      display: table
+    }
+    .text-bar p{
+      text-align: center;
+     display: table-cell;
+     vertical-align: middle;
+    }
+    .clearfix::after{
+      content: "";
+      display: block;
+      clear: both;
+    }
+    @media (max-width:600px){
+      .container .text-bar div{
+        width: 100%;
+        margin-top:10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">页头</div>
+    <div class="nav">导航</div>
+    <div class="img-bar">
+      <!-- <img src="./img/01_s.jpg" alt=""> -->
+    </div>
+    <div class="text-bar clearfix">
+      <div class="left">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sem erat, egestas quis luctus ut, rhoncus vitae risus. Integer venenatis libero sit amet sapien dictum, quis bibendum mi volutpat. Cras pretium quam quis magna facilisis, eget feugiat nisi lacinia.
+        </p>
+      </div>
+      <div class="right">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sem erat, egestas quis luctus ut, rhoncus vitae risus. Integer venenatis libero sit amet sapien dictum, quis bibendum mi volutpat. Cras pretium quam quis magna facilisis, eget feugiat nisi lacinia.
+        </p>
+      </div>
+    </div>
+    <div class="footer">页脚</div>
+  </div>
+</body>
+</html>
