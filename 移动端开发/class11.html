@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=320, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/zepto.js"></script>
+  <script src="./js/touch.js"></script>
+  <style>
+    
+    #div1{
+      width: 50%;
+      padding-bottom: 40%;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div id="div1">
+   
+  </div>
+  <script>
+    $("#div1").longTap(function(){
+      console.log(123);
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/zepto.js"></script>
+  <!-- <script src="./js/fx.js"></script> -->
+  <script src="./js/touch.js"></script>
+  <script src="./js/fastclick.js"></script>
+  <style>
+    #box{
+      width: 200px;
+      height: 200px;
+      background-color: red;
+    }
+    #box2{
+      position: absolute;
+      top:0;
+      left: 0;
+      width: 100px;
+      height: 100px;
+      background-color: blue;
+    }
+    .delete { 
+      display: none; 
+    }
+  </style>
+</head>
+<body>
+  <div id="box">
+      <input type="text">
+  </div>
+  <div id="box2">
+    
+  </div>
+  <!-- <ul id=items>
+    <li>List item 1 <span class=delete>DELETE</span></li>
+    <li>List item 2 <span class=delete>DELETE</span></li>
+  </ul> -->
+  <script>
+    // $("#box").animate({
+    //   width:400,
+    //   height:400,
+    // },1000)
+    // $('#items li').swipe(function(){
+    //   $('.delete').hide()
+    //   $('.delete', this).show()
+    // })
+
+    // // delete row on tapping delete button
+    // $('.delete').tap(function(){
+    //   $(this).parent('li').remove()
+    // })
+    // $("#box").tap(function(){
+    //   console.log("box1");
+      
+    // })
+    // $("#box2").click(function(){
+    //   $(this).hide();
+    //   console.log("box2");
+    // })
+    
+    // $("#box2").on('touchend',function(e){
+    //   // $(this).hide();
+    //   console.log('touchend');
+    //   // e.preventDefault();
+    // })
+    
+    
+    
+
+      // FastClick.attach(document.body);
+
+      $("#box2").on('tap',function(){
+        $(this).hide();
+        console.log('tap');
+      })
+      $("#box").on('click',function(){
+        console.log('box1');
+      })
+  </script>
+</body>
+</html>

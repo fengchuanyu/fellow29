@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=320, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/zepto.js"></script>
+  <script src="./js/touch.js"></script>
+  <style>
+    
+    #div1{
+      width: 50%;
+      padding-bottom: 40%;
+      background-color: red;
+    }
+    #div2{
+      width: 100px;
+      height: 100px;
+      background-color: blue;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="div1"></div>
+  <div id="div2"></div>
+  <script>
+    $("#div2").on("touchend",function(e){
+      $(this).hide();
+      console.log("di2");
+      e.preventDefault();
+    })
+    $("#div1").click(function(){
+      console.log('div1');
+    })
+  </script>
+</body>
+</html>

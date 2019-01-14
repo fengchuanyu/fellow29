@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=320, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  
+  <style>
+    
+    #div1{
+      width: 50%;
+      padding-bottom: 40%;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div id="div1">
+   
+  </div>
+  <script>
+    var oDiv = document.getElementById("div1");
+    oDiv.onclick = function(){
+      console.log('hello');
+    }
+    oDiv.ontouchstart = function(){
+      console.log('ontouchstart');
+    }
+    oDiv.ontouchmove = function(){
+      console.log('ontouchmove');
+    }
+    oDiv.ontouchend =function(){
+      console.log('ontouchend');
+    }
+    oDiv.ontouchcancel = function(){
+      
+    }
+  </script>
+</body>
+</html>
