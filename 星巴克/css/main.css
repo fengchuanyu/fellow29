@@ -1,0 +1,129 @@
+/* global start */
+*{
+  margin: 0;
+  padding:0;
+}
+html{
+  font-size: 62.5% !important;
+}
+li{
+  list-style: none;
+}
+body{
+  background-color: #f7f7f7;
+}
+a{
+  text-decoration: none;
+}
+.clearfix::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+/* global end */
+
+/* nav start */
+@media (min-width:1025px){
+  .container .nav{
+    width:30%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.12);
+  }
+  .overlay{
+    background-color: #fff;
+    position: fixed;
+    width: 30%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+  }
+}
+.nav .content{
+  height: 100%;
+}
+.nav .header{
+  padding:24px;
+}
+.nav .header .logo{
+  float: left;
+  margin-right: 12px;
+}
+.nav .logo img{
+  width:36px
+}
+.nav .header .primary{
+  float: left;
+}
+.nav .primary li{
+  float: left;
+  font-size: 1.6rem;
+  padding: 5px 10px 5px;
+  font-weight: 700;
+}
+.nav .header .icon{
+  float:right;
+  padding: 6px 0;
+}
+.nav .body{
+  height: calc(100% - 98px);
+  display: table;
+}
+.nav .body .container{
+  padding: 0 24px 0 84px;
+  display: table-cell;
+  vertical-align: middle;
+} 
+.nav .body .bc-text{
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+.nav .btn-bar span{
+  font-size:1.6rem;
+  font-weight: 400;
+  color: #00A862;
+}
+.nav .btn-bar .sign-in{
+  float: left;
+}
+.nav .sign-in img{
+  vertical-align: middle;
+  margin-top:-5px;
+}
+.nav .register{
+  border: 1px solid #00A862;
+  border-radius: 48px;
+  padding: 9px 15px 5px 15px;
+  margin-left: 20px;
+}
+.overlay .no-header{
+  padding:24px;
+}
+.overlay .no-header .logo{
+  float: left;
+}
+.overlay .no-header .close{
+  float: right;
+  background: url('https://www.starbucks.com.cn/assets/icons/icon-close.svg');
+  width: 48px;
+  height: 48px;
+  background-repeat: no-repeat;
+  border: 0;
+  outline: none;
+  background-position: center;
+}
+/* nav end */
+
+/* contetn start */
+@media (min-width:1025px){
+  .container .content-body{
+    width:70%;
+    height: 500px;
+    margin-left: 30%;
+  }
+}
+/* contetn end */
