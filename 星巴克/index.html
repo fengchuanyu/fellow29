@@ -113,23 +113,26 @@
       $(".overlay").removeClass("active");
     })
     $(".hero-btn").click(function(){
-      var trans = 0
-      if(nowIndex == 4){
-
-      }else{
-        trans = ++nowIndex* nowWidth;
+      var trans = ++nowIndex* nowWidth;
         $(".hreo-contetn").css({
           transform:'translateX('+(-trans)+'px)',
           transition:'all .3s ease'
         })
+      if(nowIndex == 4){
+        setTimeout(function(){
+          $(".hreo-contetn").css({
+          transform:'translateX(0px)',
+          transition:"none"
+        })
+        nowIndex = 0; 
+        },300)
       }
-      
     })
     function run(){
       var trans = nowIndex* nowWidth;
       $(".hreo-contetn").css({
           transform:'translateX('+(-trans)+'px)',
-          transition:'all .3s ease'
+          transition:'none'
         })
     }
     returnWinWidth();
