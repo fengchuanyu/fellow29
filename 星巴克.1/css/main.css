@@ -30,56 +30,48 @@ a{
     top: 0;
     left: 0;
     bottom: 0;
+    background-color: #fff;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.12);
   }
   .overlay{
+    background-color: #fff;
+    position: fixed;
     width: 30%;
+    top: 0;
+    left: 0;
+    bottom: 0;
   }
+  
 }
-@media (min-width:641px) and (max-width:1024px){
+@media (max-width:1024px){
   .container .nav{
-    width: 100%;
-  }
-  .nav .btn-bar{
-    margin-bottom: 20px;
+    width:100%;
+    background-color: #fff;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.12);
   }
   .nav .body .container{
-    padding: 0 16px !important;
+    padding: 0 16px 0 16px !important;
   }
   .overlay{
-    right: 0;
+    background-color: #fff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right:0;
+    bottom: 0;
   }
 }
 @media (max-width: 640px){
-  .container .nav .header{
+  .nav .header{
     display: none;
   }
-  .container .nav .btn-bar{
-    display: none;
+  .nav .content .btn-bar{
+    display: none
   }
   .nav .body .container{
-    padding:16px 16px 0 16px !important;
+    padding: 16px 16px 0 16px !important;
   }
-  .nav .container span{
-    font-size: 2.2rem;
-  }
-}
-.nav{
-  background-color: #fff;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.12);
-}
-.overlay{
-  background-color: #fff;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  visibility: hidden;
-  opacity: 0;
-  transition: all .1s ease;
-}
-.overlay.active{
-  visibility: visible;
-  opacity: 1;
 }
 .nav .content{
   height: 100%;
@@ -110,6 +102,7 @@ a{
 .nav .body{
   height: calc(100% - 98px);
   display: table;
+  width: 100%;
 }
 .nav .body .container{
   padding: 0 24px 0 84px;
@@ -119,7 +112,7 @@ a{
 .nav .body .bc-text{
   font-size: 2.6rem;
   font-weight: 700;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 .nav .btn-bar span{
   font-size:1.6rem;
@@ -128,6 +121,7 @@ a{
 }
 .nav .btn-bar .sign-in{
   float: left;
+  margin-bottom: 20px;
 }
 .nav .sign-in img{
   vertical-align: middle;
@@ -138,6 +132,15 @@ a{
   border-radius: 48px;
   padding: 9px 15px 5px 15px;
   margin-left: 20px;
+}
+.overlay{
+  opacity: 0;
+  visibility: hidden;
+  transition: all .1s ease;
+}
+.overlay.active{
+  opacity: 1;
+  visibility: visible;
 }
 .overlay .no-header{
   padding:24px;
@@ -154,35 +157,34 @@ a{
   border: 0;
   outline: none;
   background-position: center;
-  margin:-12px;
+  margin:-6px -12px;
 }
-.no-content{
+.overlay .no-content{
   display: table;
-  height: calc(100% - 98px);
   width: 100%;
+  height: calc(100% - 98px);
   transform: scale(1.2);
   transition: all .1s ease;
 }
 .overlay.active .no-content{
   transform: scale(1);
 }
-.no-content .noc-body{
-  width: 100%;
-  padding: 0 24px 0 84px;
-  height: 100%;
+.overlay .noc-body{
   display: table-cell;
   vertical-align: middle;
+  padding: 0 24px 0 84px;
 }
-.no-content .noc-body li{
-  padding:8px 0;
+.overlay .noc-body li{
   font-size: 1.8rem;
   font-weight: 700;
+  padding:8px 0;
 }
-.no-content .noc-body hr{
+.overlay .noc-body hr{
   background: rgba(0, 0, 0, 0.12);
   border: 0;
   height: 1px;
 }
+
 /* nav end */
 
 /* contetn start */
@@ -193,9 +195,11 @@ a{
     margin-left: 30%;
   }
 }
-@media (min-width:641px) and (max-width:1024px){
+@media (max-width:1024px){
   .container .content-body{
     width:100%;
+    height: 500px;
+    margin-left: 30%;
   }
 }
 /* contetn end */

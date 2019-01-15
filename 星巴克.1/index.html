@@ -8,6 +8,7 @@
   <title>Document</title>
   <link rel="stylesheet" href="./css/main.css">
   <script src="./js/jquery-3.3.1.min.js"></script>
+
 </head>
 
 <body>
@@ -25,7 +26,7 @@
               <li>菜单</li>
             </ul>
           </div>
-          <a class="icon" href="javascript:void(0);">
+          <a id="showOverlay" class="icon" href="javascript:void(0);">
             <img src="https://www.starbucks.com.cn/assets/icons/icon-hamburger.svg" alt="">
           </a>
         </div>
@@ -78,11 +79,11 @@
     <div class="content-body"></div>
   </div>
   <script>
-    $(".icon").click(function () {
-      $(".overlay").addClass("active");
-    })
     $(".close").click(function () {
-      $(".overlay").removeClass("active");
+      $(".overlay").removeClass("active")
+    })
+    $("#showOverlay").click(function () {
+      $(".overlay").addClass("active")
     })
   </script>
 </body>
