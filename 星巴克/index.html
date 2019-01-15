@@ -75,14 +75,79 @@
         </div>
       </div>
     </div>
-    <div class="content-body"></div>
+    <div class="content-body">
+      <div class="hero">
+        <div class="hero-btn"></div>
+        <ul class="hreo-contetn clearfix">
+            <li>
+                <img src="https://www.starbucks.com.cn/assets/images/featured/2019cny1/kv3.jpg" class="mobile-hidden">
+                <img src="https://www.starbucks.com.cn/assets/images/featured/2019cny1/kv5-mobile.jpg" class="show-mobile">
+            </li>
+            <li>
+                <img src="https://www.starbucks.com.cn/assets/images/featured/2019cny1/kv-0.jpg" class="mobile-hidden">
+                <img src="https://www.starbucks.com.cn/assets/images/featured/2019cny1/kv-0-mobile.jpg" class="show-mobile">
+            </li>
+            <li>
+              <img src="https://www.starbucks.com.cn/assets/images/featured/2019cny1/kv1.jpg" class="mobile-hidden">
+              <img src="https://www.starbucks.com.cn/assets/images/featured/2019cny1/kv1-mobile.jpg" class="show-mobile">
+            </li>
+            <li>
+              <img src="https://www.starbucks.com.cn/assets/images/featured/2019cny1/kv2.jpg" class="mobile-hidden">
+              <img src="https://www.starbucks.com.cn/assets/images/featured/2019cny1/kv2-mobile.jpg" class="show-mobile">
+            </li>
+            <li>
+                <img src="https://www.starbucks.com.cn/assets/images/featured/2019cny1/kv3.jpg" class="mobile-hidden">
+                <img src="https://www.starbucks.com.cn/assets/images/featured/2019cny1/kv5-mobile.jpg" class="show-mobile">
+            </li>
+        </ul>
+      </div>
+    </div>
   </div>
   <script>
+    var nowWidth =0;
+    var nowIndex = 0;
     $(".icon").click(function () {
       $(".overlay").addClass("active");
     })
     $(".close").click(function () {
       $(".overlay").removeClass("active");
+    })
+    $(".hero-btn").click(function(){
+      var trans = 0
+      if(nowIndex == 4){
+        // $(".hreo-contetn").css({
+        //   transform:'translateX('+(-trans)+'px)',
+        //   transition:'all .3s ease'
+        // },function(){
+        //   console.log("1");
+        // })
+      }else{
+        trans = ++nowIndex* nowWidth;
+        $(".hreo-contetn").css({
+          transform:'translateX('+(-trans)+'px)',
+          transition:'all .3s ease'
+        })
+      }
+      
+    })
+    function run(){
+      var trans = nowIndex* nowWidth;
+      $(".hreo-contetn").css({
+          transform:'translateX('+(-trans)+'px)',
+          transition:'all .3s ease'
+        })
+    }
+    returnWinWidth();
+    function returnWinWidth(){
+      nowWidth = $(document).width()
+      if(nowWidth>1024){
+        nowWidth = nowWidth*0.7;
+      }
+      $(".hreo-contetn").width(nowWidth*5);
+    }
+    $(window).resize(function(){
+      returnWinWidth();
+      run();
     })
   </script>
 </body>

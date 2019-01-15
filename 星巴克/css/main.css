@@ -192,10 +192,48 @@ a{
     height: 500px;
     margin-left: 30%;
   }
+  .show-mobile{
+    display: none;
+  }
 }
 @media (min-width:641px) and (max-width:1024px){
   .container .content-body{
     width:100%;
   }
+  .show-mobile{
+    display: none;
+  }
+}
+@media (max-width:640px){
+  .mobile-hidden{
+    display: none
+  }
+}
+.container .hero{
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.container .hero ul{
+  /* width: 400%; */
+}
+.container .hero li{
+  float: left;
+}
+.container .hero li{
+  width: 20%;
+}
+.container .hero img{
+  width: 100%;
+}
+.container .hero .hero-btn{
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  transform: translateY(-50%);
+  right: 40px;
+  width: 48px;
+  height: 48px;
+  background: url('https://www.starbucks.com.cn/assets/icons/icon-arrow-white.svg') no-repeat;
 }
 /* contetn end */
