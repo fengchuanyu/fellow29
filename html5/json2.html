@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var obj1= {
+      name:"小红",
+      age:"20",
+      school:"黑大",
+      parent:{
+        name:"张三",
+        age:"40"
+      }
+    }
+    
+    // var obj = {
+    //   name : "小明",
+    //   age : "18"
+    // }
+    // var obj2 = obj1; //浅克隆
+    // obj1.name = "小明"
+    // console.log(obj2.name);
+    function clone(obj){
+      var thisObj = {};
+      for(var item in obj){
+        if(typeof obj[item] == 'object'){
+          thisObj[item] = clone(obj[item])
+        }else{
+          thisObj[item] = obj[item]
+        }
+      }
+      return thisObj;
+    }
+    // var obj2 = clone(obj1);
+
+
+    var obj2 = JSON.stringify(obj1);
+
+    obj1.parent.age = '110'
+    console.log(JSON.parse(obj2));
+    
+
+  </script>
+</body>
+</html>
