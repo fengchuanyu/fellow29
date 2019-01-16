@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+  <div id="div1" >hello</div>
+  <img id="img" data-src-name="dddd.jpg" src="xx.jpg" alt="">
+  <script>
+    var oDiv = document.getElementById("div1");
+    // oDiv.setAttribute("abc","123");
+    // console.log(oDiv.getAttribute("abc"));
+    // oDiv.abc = '123';
+    // console.log(oDiv.abc);
+    
+    // console.log($("#img").data("src1"));
+    console.log(document.querySelector("#img").dataset.srcName);
+    
+    
+    
+  </script>
+</body>
+</html>
