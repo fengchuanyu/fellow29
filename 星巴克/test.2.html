@@ -19,11 +19,17 @@
       overflow-x: auto;
       white-space:nowrap;
     }
+    .box{
+      background-color: blue;
+    }
   </style>
 </head>
 <body>
   <div class="div1"></div>
-  <div class="div2">sdf sdf sdsds dfsd fdssf sds df fsd</div>
+  <div class="box">
+      <div class="div2">sdf sdf sdsds dfsd fdssf sds df fsd</div>
+  </div>
+  
   <script>
    $(".div2").scroll(function(){
     //  console.log($(this).width());
