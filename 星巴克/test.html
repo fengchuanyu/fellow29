@@ -15,25 +15,22 @@
     .div2{
       width: 100px;
       height: 100px;
-      background-color: blue;
-      position: absolute;
-      top:0;
-      left: 0;
+      background-color: yellow;
+      overflow-x: auto;
     }
   </style>
 </head>
 <body>
   <div class="div1"></div>
-  <div class="div2"></div>
+  <div class="div2">sdfsdfsdsdsdfsdfdssfsdsdffsd</div>
   <script>
-   $(".div1").click(function(){
-    console.log(1);
-    
+   $(".div2").scroll(function(){
+    //  console.log($(this).width());
+     console.log($(this).scrollLeft());
+     
    })
-   $(".div2").click(function(){
-    console.log(2);
-    
-   })
+   console.log($(".div2").get(0).scrollWidth);
+   
   </script>
 </body>
 </html>

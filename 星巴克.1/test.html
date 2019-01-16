@@ -25,6 +25,7 @@
 <body>
   <div class="div1"></div>
   <div class="div2"></div>
+  <a id="abtn" href="./test.1.html">test1</a>
   <script>
    $(".div1").click(function(){
     console.log(1);
@@ -34,6 +35,22 @@
     console.log(2);
     
    })
+   $(".div1").data("tset","aaa");
+   console.log($(".div1").data("tset"));
+   var jsona = '{"a":"1","b":"2"}';
+   console.log(JSON.parse(jsona));
+   console.log(eval('('+jsona+')'));
+   $("#abtn").click(function(){
+     
+     history.pushState("abc","");
+   })
+   window.onpopstate = function(e){
+     console.log(e.state);
+     
+   }
+
+   
+   
   </script>
 </body>
 </html>
