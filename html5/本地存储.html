@@ -8,16 +8,50 @@
 </head>
 <body>
   <script>
-   document.cookie = 'test=asdfggh;';
-   document.cookie = 'test2=123;';
-   var timer = new Date();
-   timer.setDate(timer.getDate()-1);
-   document.cookie = 'test3=123;expires='+timer.toUTCString();
-   console.log(document.cookie);
+  //  document.cookie = 'test=asdfggh;';
+  //  document.cookie = 'test2=123;';
+  //  var timer = new Date();
+  //  timer.setDate(timer.getDate()-1);
+  //  document.cookie = 'test3=123;expires='+timer.toUTCString();
+  //  console.log(document.cookie);
 
    setCookie('test4','123','1')
-   getCookie("test4")
+   console.log(getCookie("test4"));
    delCookie("test4")
+
+   function setCookie(key,val,expires){
+    var timer = new Date();
+    timer.setDate(timer.getDate()+ parseInt(expires));
+    document.cookie = key+"="+val+";expires="+timer.toUTCString();
+   }
+
+   function delCookie(key){
+    var timer = new Date();
+    timer.setDate(timer.getDate()-1);
+    document.cookie = key+"=null;expires="+timer.toUTCString();
+   }
+
+   function getCookie(key){
+    var nowCookies = document.cookie;
+    var arr = [];
+    arr = nowCookies.split(";");
+    for(var i=0;i<arr.length;i++){
+      if(arr[i].split("=")[0].trim()==key){
+        return (arr[i].split("=")[1]);
+      }
+    }
+   }
+
+  //  var str = 'test2=123; test=asdfggh; test4=123'
+  //  var arr = [];
+  //  arr = str.split(";");
+  //  for(var i=0;i<arr.length;i++){
+  //     if(arr[i].split("=")[0].trim()=="test4"){
+  //       console.log(arr[i].split("=")[1]);
+  //     }
+  //  }
+   
+
    
   </script>
 </body>
