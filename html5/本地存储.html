@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+   document.cookie = 'test=asdfggh;';
+   document.cookie = 'test2=123;';
+   var timer = new Date();
+   timer.setDate(timer.getDate()-1);
+   document.cookie = 'test3=123;expires='+timer.toUTCString();
+   console.log(document.cookie);
+
+   setCookie('test4','123','1')
+   getCookie("test4")
+   delCookie("test4")
+   
+  </script>
+</body>
+</html>
