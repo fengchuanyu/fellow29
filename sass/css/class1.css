@@ -1,0 +1,187 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.box {
+  color: "blue";
+}
+.box .box2 {
+  width: 100px;
+}
+
+.div1 {
+  background-color: "blue";
+}
+.div1-content {
+  width: 200px;
+}
+.div1-content-text {
+  font-style: italic;
+}
+
+.clearfix {
+  color: black;
+}
+.clearfix::after {
+  content: "";
+}
+
+.div10 {
+  border-right-color: "blue";
+  border-right-style: 'sold';
+  border-right-width: 10px;
+  border-left: 2px;
+}
+
+.div11 {
+  width: 300px;
+  height: 200px;
+  color: #000;
+}
+
+.div12 {
+  width: 100px;
+  height: 20px;
+  color: #000;
+}
+
+.div13, .div14 {
+  width: 111px;
+  height: 222px;
+  background-color: #fff;
+}
+
+.div14 {
+  font-size: 10px;
+}
+
+.div15 {
+  width: 1px;
+}
+
+.div16 {
+  width: url("./img/xx.jpg");
+}
+
+.div17 {
+  color: #ff9999;
+  background-color: #660000;
+  border-color: rgba(255, 0, 0, 0.8);
+}
+
+.div18 {
+  color: rgba(255, 0, 0, 0.2);
+}
+
+.div19 {
+  color: #fff;
+}
+
+/*!注释 fellow29*/
+.box-div2 {
+  color: #000;
+}
+
+.div20 {
+  color: blue;
+}
+
+.div-1 {
+  color: coral;
+}
+
+.div-2 {
+  color: coral;
+}
+
+.div-3 {
+  color: coral;
+}
+
+.div-4 {
+  color: coral;
+}
+
+.div-5 {
+  color: coral;
+}
+
+.div-6 {
+  color: coral;
+}
+
+.div-7 {
+  color: coral;
+}
+
+.div-8 {
+  color: coral;
+}
+
+.div-9 {
+  color: coral;
+}
+
+.div-first {
+  width: 100px;
+}
+
+.div-b {
+  width: 100px;
+}
+
+.div-c {
+  width: 100px;
+}
+
+.div-d {
+  width: 100px;
+}
+
+.div-test-10 {
+  color: #000;
+}
+
+.div-test-9 {
+  color: #000;
+}
+
+.div-test-8 {
+  color: #000;
+}
+
+.div-test-7 {
+  color: #000;
+}
+
+.div-test-6 {
+  color: #000;
+}
+
+.div-test-5 {
+  color: #000;
+}
+
+.div-test-4 {
+  color: #000;
+}
+
+.div-test-3 {
+  color: #000;
+}
+
+.div-test-2 {
+  color: #000;
+}
+
+.div-test-1 {
+  color: #000;
+}
+
+/*# sourceMappingURL=class1.css.map */

@@ -1,0 +1,114 @@
+@import 'main';
+$color:'blue';
+.box{
+  color: $color;
+  .box2{
+    width: 100px;
+  }
+}
+
+.div1{
+  background-color: $color;
+  &-content{
+    width: 200px;
+    &-text{
+      font-style: italic;
+    }
+  }
+}
+.clearfix{
+  color:black;
+  &::after{
+    content: "";
+  }
+}
+$width11:'width';
+.div10{
+  border: {
+    right: {
+      color:$color;
+      style:'sold';
+      #{$width11}:10px
+    };
+    left:2px
+  }
+}
+@mixin name($w:10px,$h:20px) {
+  width: $w;
+  height: $h;
+  color: #000;
+}
+.div11{
+  @include name(300px,200px)
+}
+.div12{
+  @include name(100px)
+}
+.div13{
+  width: 111px;
+  height: 222px;
+  background-color: #fff;
+}
+.div14{
+  font-size: 10px;
+  @extend .div13
+}
+$wid:10px;
+.div15{
+  width: (15px)/15;
+}
+$img:'xx.jpg';
+.div16{
+  width:url('./img/'+$img);
+}
+.div17{
+  color:lighten(#ff0000,30%);
+  background-color:darken(#ff0000,30%); ;
+  border-color:opacify(rgba(255,0,0,.5),0.3);
+  
+}
+.div18{
+  color: transparentize(rgba(255,0,0,.5),0.3);
+}
+$m: (light: #000, dark: #fff);
+
+.div19{
+  color:map-get($m,dark); 
+}
+$text:'fellow29';
+$sel:"div2";
+/*!注释 #{$text}*/
+.box-#{$sel}{
+  color: #000;
+}
+@function foo($key){
+  @if($key==1){
+    @return blue;
+  }@else if($key==2){
+    @return red;
+  }@else{
+    @error '参数错误！';
+    @return yellow;
+  }
+}
+.div20{
+  color: foo(1)
+}
+@for $i from 1 to 10{
+  .div-#{$i}{
+    color: coral;
+  }
+} 
+$list: first b c d;
+@each $var in $list {
+  .div-#{$var}{
+    width: 100px;
+  }
+}
+$i:10;
+@while $i>0 {
+  .div-test-#{$i}{
+    color: #000;
+  }
+  $i:($i)-1;
+}
