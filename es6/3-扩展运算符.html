@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function foo(...arg){
+      console.log(arg);
+    }
+    // foo("a","ab","abc","abcd")
+    // let arr = ["a","b","c"];
+    // let arr2 = [...arr,"d","e"];
+    // console.log(arr.concat(arr2));
+    // console.log(arr2);
+
+    let arr = ["a","b","c"];
+    // let arr2 = arr;
+    // arr[1]="abcd"
+    // console.log(arr2);
+    arr2 = [1,2,3,...arr]
+
+    // let arr = ["a","b","c",[1,2,3]];
+    // let arr2 = [...arr];
+    // arr2[3]=arr[3]
+    // arr[3][0]="abc"
+    // console.log(arr2);
+    
+    let arr = ['a','b','c'];
+    let arr2 = ['d','e'];
+    let arr3 = [...arr,...arr2];
+    console.log(arr3);
+    let obj = {
+      name:"xiaoming",
+      age:"20"
+    }
+    let obj2 = {
+      name:"xiaohong",
+      schoole:"农大"
+    }
+    let obj3 = {...obj,...obj2}
+    // console.log(obj3);
+
+    // var arr = [1,2,3];
+    // let [a,b,c] = [...arr];
+    // console.log(a,b,c);
+
+    function foo(a,b,...arg){
+      console.log(a,b,arg);
+    }
+    foo("1",'2','4','b','e',"d");
+    
+
+
+    
+
+    
+    
+  </script>
+</body>
+</html>
