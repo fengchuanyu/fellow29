@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // if(true){
+    //   function foo(){
+    //     console.log(1);
+    //   }
+    // }
+    // foo();
+
+
+    function f() { console.log('I am outside!'); }
+
+    (function () {
+      // var f;
+      if (false) {
+        // 重复声明一次函数f
+        var f = function() { console.log('I am inside!'); }
+      }
+      console.log(f);
+    }());
+
+
+    // if(true){
+    //   let a = 10
+    // }
+
+    // console.log(a);
+
+
+
+    
+    // var a = 20;
+    // function foo(){
+    //   var a;
+    //   if(false){
+    //     var a = 10
+    //   }
+    //   console.log(a);
+    // }
+    // foo();    
+    
+  </script>
+</body>
+</html>
