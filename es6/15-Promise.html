@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./jquery-3.3.1.min.js"></script>
+</head>
+<body>
+  <script>
+    // $.get('./a.json',function(res){
+    //   console.log(res);
+    //   $.get("./b.json",function(res){
+    //     console.log(res);
+    //     $.get("./c.json",function(res){
+    //       console.log(res);
+    //     })
+    //   })
+    // })
+
+    // new Promise(function(resolve,reject){
+    //   $.get('./a.json',function(res){
+    //     // resolve();
+    //     reject();
+    //   })
+    // }).then(function(){
+    //   console.log('成功');
+    // }).catch(function(){
+    //   console.log('失败');
+    // })
+
+    // new Promise(function(resolve,reject){
+    //   $.get('./a.json',function(res){
+    //     // resolve();
+    //     reject();
+    //   })
+    // }).then(function(){
+    //   console.log('成功');
+    //   $.get('./a.json',function(res){
+    //     // resolve();
+    //     reject();
+    //   })
+    // },function(){
+    //   console.log('失败');
+    // })
+
+    // function ajaxProm(url){
+    //   return new Promise(function(resolve,reject){
+    //     $.get(url,function(res){
+    //       resolve(res);
+    //     })
+    //   })
+    // }
+
+    // ajaxProm('./a.json').then(function(res){
+    //   console.log(res);
+    //   return ajaxProm("./b.json")
+    // }).then(function(res){
+    //   console.log(res);
+    //   return ajaxProm("./c.json");
+    // }).then(function(res){
+    //   console.log(res);
+    // })
+
+    // let a = new Promise(function(resolve,reject){
+    //   $.get('./a.json',function(){
+    //     reject();
+    //   })
+    // })
+    // let b = new Promise(function(resolve,reject){
+    //   $.get('./b.json',function(){
+    //     resolve();
+    //   })
+    // })
+    // let c = new Promise(function(resolve,reject){
+    //   $.get('./c.json',function(){
+    //     resolve();
+    //   })
+    // })
+
+    // Promise.all([a,b,c]).then(function(){
+    //   console.log('全部成功');
+    // },function(){
+    //   console.log('没有全部成功');
+      
+    // })
+    // Promise.race([a,b,c]).then(function(){
+    //   console.log('race成功');
+    // },function(){
+    //   console.log('没有成功');
+    // })
+
+    function req(url){
+      $.get(url,function(res){
+        a.next(res);
+      })
+    }
+
+    function* geAjax(){
+      console.log(yield req('./a.json'));
+      console.log(yield req('./b.json'));
+      console.log(yield req('./c.json'));
+    }
+    let a = geAjax();
+    a.next();
+
+  </script>
+</body>
+</html>
