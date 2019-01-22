@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function Person(name,age){
+      this.name = name;
+      this.age = age;
+    }
+    Person.prototype.shwoInfo = function(){
+      console.log(this.name,this.age);
+    }
+
+    function Teacher(name,age,school){
+      Person.call(this,name,age);
+      this.school = school;
+    }
+    Teacher.prototype = new Person();
+    Teacher.prototype.showSchool = function(){
+      console.log(this.school);
+    }
+    Teacher.prototype.constructor = Teacher;
+    // console.log(Teacher.prototype.constructor);
+
+    
+
+    var student = new Teacher('xiaoming','18','heida');
+    console.log(student.name);
+    student.shwoInfo();
+    student.showSchool();
+    
+
+    // var  student = new Person('ls',20);
+    // student.shwoInfo();
+
+
+    // class Person{
+    //   constructor(name,age){
+    //     this.name = name;
+    //     this.age = age;
+    //   }
+    //   showInfo(){
+    //     console.log(this.name,this.age);
+    //   }
+    // }
+
+    // class Teacher extends Person{
+    //   constructor(name,age,school){
+    //     super(name,age);
+    //     this.school = school;
+    //   }
+    //   showSchool(){
+    //     console.log(this.school);
+    //   }
+    // }
+
+    // let student = new Teacher("xiaoming","18","nongda")
+    // // console.log(student.name);
+    // student.showInfo();
+    // student.showSchool();   
+    
+  </script>
+</body>
+
+</html>

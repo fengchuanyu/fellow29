@@ -5,13 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <script src="./jquery-3.3.1.min.js"></script>
 </head>
 <body>
   <script>
-    $.get('http://api01.idataapi.cn:8000/news/qihoo?kw=白&site=qq.com&apikey=Mk1GymHKyUMxWD9BesO7ZZ2ZzEaC4an7OCBpnwoxpR03B3yA0YNhaorxxnak4Zf4',function(res){
-      console.log(res);
-    },'json')
+  var a = 10;
+  var obj = {
+    a:"abc",
+    b:"123"
+  }
+
+  function foo(name,age){
+    console.log(this);
+    console.log(name,age);
+    
+  }
+
+  // foo.call(obj,'ls',20);
+  // foo.apply(obj,['zs','30']);
+  let fbind = foo.bind(obj,'ww','35');
+  fbind()
+  
+
   </script>
 </body>
 </html>

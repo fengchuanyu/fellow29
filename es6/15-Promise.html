@@ -30,20 +30,25 @@
     //   console.log('失败');
     // })
 
-    // new Promise(function(resolve,reject){
-    //   $.get('./a.json',function(res){
-    //     // resolve();
-    //     reject();
-    //   })
-    // }).then(function(){
-    //   console.log('成功');
-    //   $.get('./a.json',function(res){
-    //     // resolve();
-    //     reject();
-    //   })
-    // },function(){
-    //   console.log('失败');
-    // })
+   let a= new Promise(function(resolve,reject){
+      $.get('./a.json',function(res){
+        // resolve();
+        resolve();
+      })
+    }).then(function(){
+      console.log('成功');
+      $.get('./a.json',function(res){
+        return '123'
+      })
+      return '123'
+    }).then(function(res){
+      console.log(res);
+      return 'abc'
+    })
+   .then(function(res){
+      console.log(res);
+    })
+    
 
     // function ajaxProm(url){
     //   return new Promise(function(resolve,reject){
@@ -91,19 +96,19 @@
     //   console.log('没有成功');
     // })
 
-    function req(url){
-      $.get(url,function(res){
-        a.next(res);
-      })
-    }
+    // function req(url){
+    //   $.get(url,function(res){
+    //     a.next(res);
+    //   })
+    // }
 
-    function* geAjax(){
-      console.log(yield req('./a.json'));
-      console.log(yield req('./b.json'));
-      console.log(yield req('./c.json'));
-    }
-    let a = geAjax();
-    a.next();
+    // function* geAjax(){
+    //   console.log(yield req('./a.json'));
+    //   console.log(yield req('./b.json'));
+    //   console.log(yield req('./c.json'));
+    // }
+    // let a = geAjax();
+    // a.next();
 
   </script>
 </body>
