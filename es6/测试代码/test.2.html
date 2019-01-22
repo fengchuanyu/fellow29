@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+  <script>
+    // function* gen(){
+    //   yield 'one';
+    //   yield 'two';
+    //   return 'three';
+    // }
+    // let a = gen();
+    // console.log(a.next());
+    // console.log(a.next());
+    // console.log(a.next());
+
+
+    function* foo(x) {
+      var y = 2 * (yield(x + 1));
+      console.log(y);
+      
+      var z = yield(y / 3);
+      console.log(z);
+      
+      return (x + y + z);
+    }
+
+    var a = foo(5);
+    console.log(a.next());
+    console.log(a.next(6));
+    console.log(a.next(4));
+    // a.next() // Object{value:6, done:false}
+    // a.next() // Object{value:NaN, done:false}
+    // a.next() // Object{value:NaN, done:true}
+  </script>
+</body>
+
+</html>

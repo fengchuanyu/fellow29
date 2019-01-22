@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./jquery-3.3.1.min.js"></script>
+</head>
+<body>
+  <script>
+    // $.get("./a.json",{name:"123"},function(res){
+    //   console.log(res);
+    // })
+    // new Promise(function(resolve,reject){
+    //   $.get("./a.json",{name:"123"},function(res){
+    //     resolve()
+    //   })
+    // }).then(function(){
+    //   console.log('成功');
+      
+    //   $.get("./b.json",{name:"123"},function(res){
+    //     resolve()
+    //   })
+    // },function(){
+    //   console.log('失败');
+    // })
+
+    // function getRequest(url){
+    //   return new Promise(function(resolve,reject){
+    //     $.get(url,function(res){
+    //       if('name' in res){
+    //         resolve(res)
+    //       }else{
+    //         reject();
+    //       }
+    //     })
+    //   })
+    // }
+    // getRequest("./a.json").then(function(res){
+    //   console.log(res);
+    //   return getRequest("./b.json");
+    // }).then(function(res){
+    //   console.log(res);
+    //   return getRequest("./c.json");
+    // }).then(function(res){
+    //   console.log(res);
+      
+    // })
+
+    // let one = new Promise(function(resolve,reject){
+    //   $.get("./a.json",function(){
+    //     resolve();
+    //   })
+    // })
+    // let two = new Promise(function(resolve,reject){
+    //   $.get("./b.json",function(){
+    //     reject();
+    //   })
+    // })
+    // let three = new Promise(function(resolve,reject){
+    //   $.get("./c.json",function(){
+    //     resolve();
+    //   })
+    // })
+
+    // Promise.all([one,two,three]).then(function(){
+    //   console.log('all yes');
+    // },function(){
+    //   console.log('not all yes');
+      
+    // })
+    
+    // Promise.race([one,two,three]).then(function(){
+    //   console.log("race yes");
+      
+    // },function(){
+    //   console.log('race not yes');
+      
+    // })
+
+    function myAjax(url){
+      $.get(url,function(res){
+        test.next(res);
+      })
+    }  
+
+    function* getAjas(url){
+     console.log(yield myAjax('./a.json'));
+     console.log( yield myAjax('./b.json'));
+     console.log( yield myAjax('./c.json'));
+    }
+    let test = getAjas();
+    test.next();
+  </script>
+</body>
+</html>

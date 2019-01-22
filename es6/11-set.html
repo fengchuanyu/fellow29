@@ -16,14 +16,34 @@
     // console.log(nSet.has(4));
     // console.log(nSet);
 
-    var arr = [1,2,3,4,5,2];
-    var nSet = new Set(arr);
-    console.log(nSet);
+    // var arr = [1,2,3,4,5,2];
+    // var nSet = new Set(arr)
 
-    for(var val of nSet){
-      console.log(val);
-      
-    }
+    // console.log(nSet.size);
+    
+
+
+
+    // console.log(Array.from(new Set(arr)));
+    // 
+    // var arr2 = []
+    // for(var val of arr){
+    //   if(!arr2.includes(val)){
+    //     arr2.push(val);
+    //   }
+    // }
+
+    // console.log(arr2);
+    
+
+     let obj = {
+       name:"zs"
+     }
+    let ws = new WeakSet();
+    ws.add(obj);
+    ws.add(obj);
+    console.log(ws);
+    
     
 
     

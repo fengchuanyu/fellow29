@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+  <script>
+    // function Person(name,age){
+    //   this.name = name;
+    //   this.age = age;
+    // }
+    // Person.prototype.showInfo = function(){
+    //   console.log(this.name,this.age);
+    // }
+
+    // function Teacther(name,age,school){
+    //   Person.call(this,name,age);
+    //   this.school = school;
+    // }
+    // Teacther.prototype = new Person();
+    // Teacther.prototype.constructor = Teacther;
+    // console.log(Teacther.prototype.constructor);
+    
+
+    // var doctor = new Teacther('ls','30','heida');
+    // // doctor.showInfo();
+    // console.log(doctor.school);
+    
+
+    // var student = new Person('xiaoming',20);
+    // student.showInfo();
+
+    class Person{
+      constructor(name,age){
+        this.name = name;
+        this.age = age;
+      }
+      showInfo(){
+        console.log(this.name,this.age);
+      }
+    }
+
+    class Teacher extends Person{
+      constructor(name,age,school){
+        super(name,age);
+        this.school = school;
+      }
+      showSchool(){
+        console.log(this.school);
+      }
+    }
+
+    let student = new Teacher('xiaoming','10','heida');
+    student.showSchool();
+    // let student = new Person('ls','20');
+    // student.showInfo();
+  </script>
+</body>
+
+</html>

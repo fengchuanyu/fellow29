@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //第一步创建对象
+    var xmlhttp;
+    if (window.XMLHttpRequest)
+      {// code for IE7+, Firefox, Chrome, Opera, Safari
+      xmlhttp=new XMLHttpRequest();
+      }
+    else
+      {// code for IE6, IE5
+      xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      //发送请求
+      xmlhttp.open("GET","./a.json",true);
+      xmlhttp.send();
+      //请求回调
+      xmlhttp.onreadystatechange=function()
+      {
+      if (xmlhttp.readyState==4 && xmlhttp.status==200)
+        {
+          console.log(JSON.parse(xmlhttp.responseText));
+        }
+      }
+/*
+      存有 XMLHttpRequest 的状态。从 0 到 4 发生变化。
+
+      0: 请求未初始化
+      1: 服务器连接已建立
+      2: 请求已接收
+      3: 请求处理中
+      4: 请求已完成，且响应已就绪
+      
+      */
+  </script>
+</body>
+</html>

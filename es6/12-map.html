@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    // let nm = new Map();
+    // var obj = {
+    //   name:"ls"
+    // }
+    // nm.set(obj,"user")
+    // nm.set("age","20")
+    // nm.set([1,2,3],['a','b','c'])
+    // console.log(nm.get(obj));
+    // for(let val of nm){
+    //   console.log(val);
+    // }
+
+    var nm = new WeakMap();
+    nm.set({name:"user"},'123');
+    nm.set({age:"29"},'ls')
+    console.log(nm);
+    
+    
+
+  </script>
+</body>
+</html>
