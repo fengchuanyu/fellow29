@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // reg3 = /b/
+    // let reg = /a/;
+    // let reg2 = new RegExp(reg3)
+
+    // let reg = /^b/m
+    // let str = "test\nbbs"
+
+    // console.log(reg.test(str));
+    // console.log(reg.exec(str));
+    // console.log(str.match(reg));
+
+    var str="Vi"
+    var reg = /(?<test>v)(?<test2>i)/i
+    console.log(reg.exec(str));
+    console.log(str.replace(reg,'$2abc$1'));
+    
+    
+    
+    
+  </script>
+</body>
+</html>

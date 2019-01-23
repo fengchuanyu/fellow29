@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    span{
+      color: red;
+    }
+    div{
+      margin-bottom:20px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+     <h3>电话号码正则</h3> 
+     <p>区号必填为3-4位的数字，区号之后用“-”与电话号码连接 例：<span>0451</span>-12345678-1234 </p> 
+     <p>电话号码为7-8位的数字 例：0451-<span>12345678</span>-1234</p>  
+     <p>分机号码为3-4位的数字，非必填，但若填写则以“-”与电话号码相连接 例：0451-12345678-<span>1234</span></p> 
+  </div>
+  <div>
+    <h3>手机号码正则表达式</h3>
+    <p>正则验证手机号，忽略前面的0，支持130-139，150-159。忽略前面0之后判断它是11位的。</p>
+    <p>例：013889294444 ( <span>true</span> )</p>
+    <p>例：13889294444 ( <span>true</span> )</p>
+  </div>
+  <div>
+    <h3>用户名正则表达式</h3>
+    <p>正则验证用户名，包含数字、字母、下划线11位。</p>
+  </div>
+  <div>
+    <h3>日期正则表达式</h3>
+    <p>yyyy-mm-dd格式</p>
+  </div>
+
+  <div>
+      <h3>日期正则表达式</h3>
+      <p>2018-15-08</p>
+      <p>2018年08月15日</p>
+  </div>
+</body>
+</html>
