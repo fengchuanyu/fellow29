@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <h3>电话号码正则</h3> 
+    <p>区号必填为3-4位的数字，区号之后用“-”与电话号码连接 例：<span>0451</span>-12345678-1234 </p> 
+    <p>电话号码为7-8位的数字 例：0451-<span>12345678</span>-1234</p>  
+    <p>分机号码为3-4位的数字，非必填，但若填写则以“-”与电话号码相连接 例：0451-12345678-<span>1234</span></p> 
+  </div>
+  <script>
+    let str1 = '010-1234567';
+    let str2 = '0451-12345678';
+
+    let reg = /\d{3,4}-\d{7,8}(-\d{3,4})?$/;
+
+    console.log(reg.test(str2));
+    
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div>
+    <h3>手机号码正则表达式</h3>
+    <p>正则验证手机号，忽略前面的0，支持130-139，150-159。忽略前面0之后判断它是11位的。</p>
+    <p>例：013889294444 ( <span>true</span> )</p>
+    <p>例：13889294444 ( <span>true</span> )</p>
+  </div>
+  <script>
+    let str1 = '000013889294444';
+    let str2 = '13889294444';
+
+    let reg = /0*(13|15)\d{9}$/;
+    console.log(reg.test(str2));
+    
+  </script>
+</body>
+
+</html>
