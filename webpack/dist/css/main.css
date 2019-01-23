@@ -1,0 +1,10 @@
+*{
+  margin:0;
+  padding:0;
+}
+#box{
+  color: red;
+  height: 100px;
+  width: 100px;
+  background-image: url(http://127.0.0.1:8081/img/bfc9054812ebf71289ddda9fc0104229.jpg);
+}
