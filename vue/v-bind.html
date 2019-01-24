@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <style>
+    .active{
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div :class="{active:className}">hello world</div>
+    <img v-bind:src="'./img/'+imgSrc" alt="">
+    <div :style="divstyle">111</div>
+  </div>
+
+  <script>
+    let vm = new Vue({
+      el: "#app",
+      data: {
+        className:true,
+        imgSrc:"01.jpg",
+        divstyle:{
+          width:'100px',
+          height:'100px',
+          background:'red'
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

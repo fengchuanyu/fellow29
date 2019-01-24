@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <div>
+        <input type="text" v-model.trim="val" @keyup="showVal">
+      <input type="text" v-model.lazy="val">
+      {{val}}
+    </div>
+    <div>
+      性别：
+      <input type="radio" v-model="sex" name="sex" value="男">男
+      <input type="radio" v-model="sex" name="sex" value="女">女
+      {{sex}}
+    </div>
+    <input type="text" v-model="msg">
+    <select name="" id="" v-model="checkSchool">
+      <option v-bind:value="item" v-for="(item, index) in school" :key="index">{{item}}</option>
+    </select>
+    <div>
+      <input type="checkbox" v-model="hobbies" value="篮球" name="hobby">篮球
+      <input type="checkbox" v-model="hobbies" value="足球" name="hobby">足球
+      <input type="checkbox" v-model="hobbies" value="排球" name="hobby">排球
+      <input type="checkbox" v-model="hobbies" value="羽毛球" name="hobby">羽毛球
+      <h1>{{hobbies}}</h1>
+    </div>
+    {{checkSchool}}
+    <h1>{{msg}}</h1>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el:"#app",
+      data:{
+        val:"123",
+        sex:"男",
+        msg:"",
+        checkSchool:"林大",
+        hobbies:[],
+        school:["黑大","林大","农大","理工"]
+      },
+      methods: {
+        showVal(){
+          console.log(this.val);
+        }
+      },
+    })
+  </script>
+</body>
+</html>
