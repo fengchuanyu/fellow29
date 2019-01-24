@@ -64,7 +64,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "64c332de74e24897fe41";
+/******/ 	var hotCurrentHash = "57cdb2ce7b49f8314034";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -835,7 +835,7 @@ eval("// removed by extract-text-webpack-plugin\n\n//# sourceURL=webpack:///./sr
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _main = __webpack_require__(/*! ./css/main.css */ \"./src/css/main.css\");\n\nvar _main2 = _interopRequireDefault(_main);\n\nvar _index = __webpack_require__(/*! ./css/index.scss */ \"./src/css/index.scss\");\n\nvar _index2 = _interopRequireDefault(_index);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar json = __webpack_require__(/*! ../author.json */ \"./author.json\");\n// import $ from \"jquery\";\nvar a = 10;\nvar fellow = 20;\nvar oBox = document.querySelector(\"#box\");\noBox.innerHTML = \"作者\" + json.author;\n// $(\".div1\").html(\"hello jquery\")\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("\n\nvar _main = __webpack_require__(/*! ./css/main.css */ \"./src/css/main.css\");\n\nvar _main2 = _interopRequireDefault(_main);\n\nvar _index = __webpack_require__(/*! ./css/index.scss */ \"./src/css/index.scss\");\n\nvar _index2 = _interopRequireDefault(_index);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar json = __webpack_require__(/*! ../author.json */ \"./author.json\");\n// import $ from \"jquery\";\nvar a = 10;\nvar fellow = 20;\nvar oBox = document.querySelector(\"#box\");\noBox.innerHTML = \"作者\" + json.author;\n// $(\".div1\").html(\"hello jquery\")\nvar arr = [1, 23, 4, 5, 6, 7, 5];\nconsole.log(Array.from(new Set(arr)));\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
