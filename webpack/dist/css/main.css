@@ -1,10 +1,20 @@
-*{
-  margin:0;
-  padding:0;
+/*! 唯创网讯 */
+.div1 {
+  width: 100px;
+  height: 100px;
+  background-color: red;
 }
-#box{
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#box {
   color: red;
   height: 100px;
   width: 100px;
+  -webkit-transform: rotate(30deg);
+  transform: rotate(30deg);
   background-image: url(http://127.0.0.1:8081/img/bfc9054812ebf71289ddda9fc0104229.jpg);
 }
