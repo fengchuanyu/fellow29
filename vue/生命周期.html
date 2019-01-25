@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+      <button @click="add">add</button>
+      <button @click="destroy">销毁</button>
+      {{num}}
+  </div>
+  <script>
+    new Vue({
+      el:"#app",
+      data:{
+        num:0
+      },
+      methods: {
+        add(){
+          setInterval(()=>{
+            this.num++;
+            console.log("run");
+          },1000)
+        },
+        destroy(){
+          this.$destroy();
+        }
+      },
+      beforeCreate() {
+        console.log('beforeCreate');
+      },
+      created() {
+        console.log('created');
+      },
+      beforeMount() {
+        console.log('beforeMount');
+      },
+      mounted() {
+        console.log('mounted');
+      },
+      beforeUpdate () {
+        console.log('beforeUpdate');
+      },
+      updated () {
+        console.log('updated');
+      },
+      beforeDestroy () {
+        console.log('beforeDestroy');
+      },
+      destroyed () {
+        console.log('destroyed');
+      }
+    })
+  </script>
+</body>
+</html>
