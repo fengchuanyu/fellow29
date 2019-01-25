@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .active{
+      background: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div>
+        <input type="text" placeholder="搜索" v-model="searchText"><input type="button" @click="search" value="搜索">
+    </div> 
+    <div>
+      <input type="text" placeholder="名称" v-model="name"><input type="number" placeholder="价格" v-model="price"><input type="button" @click="add"  value="添加">
+    </div>
+    <table>
+      <thead>
+        <th>选择</th>
+        <th>商品名称</th>
+        <th>商品价格</th>
+        <th>操作</th>
+      </thead>
+      <tbody>
+        <tr v-for="(item, index) in productList" :class="{active:item.isSelected}" @click="item.isSelected=!item.isSelected" :key="index">
+          <td><input type="checkbox" name="cb" v-model="checkArr" :value="item.id"></td>
+          <td>{{item.name}}</td>
+          <td>{{item.price}}</td>
+          <td><input type="button" value="删除" v-on:click="delSig(item.id)"></td>
+        </tr>
+        <tr>
+          <td><button @click="delCheck">删除选中</button></td>
+          <td colspan="3">价格：{{sum}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el:"#app",
+      data:{
+        name:"",
+        price:0,
+        nowId:"5",
+        searchText:"",
+        productList: [{
+            id:"1",
+            name: '衣服',
+            price: 123,
+            isSelected: false,
+        }, {
+            id:"2",
+            name: '裤子',
+            price: 456,
+            isSelected: false,
+        }, {
+            id:"3",
+            name: '鞋',
+            price: 444,
+            isSelected: false,
+        }, {
+            id:"4",
+            name: '帽子',
+            price: 666,
+            isSelected: false,
+        }, {
+            id:"5",
+            name: '手套',
+            price: 88,
+            isSelected: false,
+        }
+      ],
+      },
+      methods: {
+        delCheck(){
+          // let arr = [];
+          // this.productList.forEach(function(val,index){
+          //   if(!val.isSelected){
+          //     arr.push(val);
+          //   }
+          // })
+          // this.productList = arr;
+          var _this = this
+          this.productList.forEach(function(val,index){
+            if(val.isSelected){
+              _this.delSig(val.id);
+            }
+          })
+        },
+        delSig(id){
+          var thisArr = [];
+          thisArr = this.productList.filter(function(val,index,arr){
+            if(val.id != id){
+              return val
+            }
+          })
+          this.productList = thisArr;
+        },
+        add(){
+          let obj = {
+            id:++this.nowId,
+            name:this.name,
+            price:this.price,
+            isSelected:false
+          }
+          this.productList.push(obj)
+        },
+        search(){
+          let _this=this
+          let thisArr = [];
+          thisArr = this.productList.filter(function(val,index){
+            if(val.name.includes(_this.searchText)){
+              console.log(val.name,_this.searchText);
+              return val
+            }
+          })
+          this.productList = thisArr;
+        }
+      },
+      computed: {
+        checkArr(){
+          let arr = [];
+          this.productList.forEach(function(val,index){
+            if(val.isSelected){
+              arr.push(val.id);
+            }
+          })  
+          return arr
+        },
+        sum(){
+          let sumNum = 0;
+          this.productList.forEach(function(val,index){
+            if(val.isSelected){
+              sumNum+=val.price;
+            }
+          })
+          return sumNum;
+        }
+      }
+    })
+
+    
+  </script>
+</body>
+</html>

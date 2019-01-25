@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <style>
+    .active{
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="item in arr"  :class="{active:item.isSelect}">
+        <p>商品名称{{item.name}}</p>
+        <p>商品价格{{item.price}}</p>
+      </li>
+    </ul>
+  </div>
+  <script>
+    
+    new Vue({
+      el:"#app",
+      data:{
+        arr:[
+        {
+          name:"衣服",
+          price:123,
+          isSelect:true
+        },
+        {
+          name:"衣服1",
+          price:1234,
+          isSelect:false
+        },
+        {
+          name:"衣服2",
+          price:12345,
+          isSelect:false
+        },
+        ]
+      }
+    })
+  </script>
+</body>
+</html>
