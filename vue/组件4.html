@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <weichuang msg="第一个" msg2="ww"></weichuang>
+    <fellow1 @click.native="comHandle"></fellow1>
+  </div>
+  
+  <script>
+    Vue.component("weichuang",{
+      template:`
+      <div>
+        <h1> {{msg}}</h1>
+        <ul>
+          <li>1</li>  
+          <li>2</li>  
+          <li>3</li>  
+        </ul>
+      </div>
+      
+      `,
+      props:['msg',"msg2"]
+    })
+    Vue.component('fellow',{
+      template:`<h1>hello {{msg}}</h1>`,
+      props: ['msg']
+    })
+    new Vue({
+      el:"#app",
+      data:{
+        num:0
+      },
+      methods: {
+        comHandle(){
+          console.log(123);
+          
+        }
+      },
+      components:{
+        'fellow1':{
+          template:`
+          <div>
+          <h1>hello {{msg}}</h1>
+          </div>
+          `,
+          props: ['msg']
+        },
+      }
+    })
+    // new Vue({
+    //   el:"#div2"
+    // })
+  </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    {{fullName}}
+  </div>
+  <script>
+    let vm = new Vue({
+      el: "#app",
+
+      data: {
+        firstName: 'Foo',
+        lastName: 'Bar',
+        fullName: 'Foo Bar'
+      },
+      watch: {
+        firstName(val) {
+          this.fullName = val + ' ' + this.lastName
+        },
+        lastName(val) {
+          this.fullName = this.firstName + ' ' + val
+        }
+      }
+
+      // data: {
+      //   firstName: 'Foo',
+      //   lastName: 'Bar'
+      // },
+      // computed: {
+      //   fullName() {
+      //     return this.firstName + ' ' + this.lastName
+      //   }
+      // }
+    })
+  </script>
+</body>
+
+</html>
