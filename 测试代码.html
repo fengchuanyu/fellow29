@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .div .div2{
+      color: red
+    } 
+    #div2{
+      box-sizing: border-box;
+      color: blue;
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      padding:10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="div2" id="div2">
+  </div>
+  <script>
+    // function foo(){
+
+    // }
+
+
+
+
+    // var name = "zs"
+    // var obj = {
+    //   name:this.name,
+    //   showName:()=>{
+    //     console.log(this.name);
+    //   }
+    // }
+
+    // obj.showName();
+
+      var name="zs";
+      var obj = {
+        name:"ls"
+      }
+      function foo(msg){
+        console.log( msg+" ："+this.name);
+      }
+      foo.bind(obj,'姓名')();
+
+
+    // let foo = () => {}
+
+    // var oDiv = document.getElementById("div2");
+    // oDiv.onclick = function(){
+    //   console.log(1);
+    // }
+    // oDiv.onclick = function(){
+    //   console.log(2);
+    // }
+    // function foo(){
+    //   console.log(1);
+    // }
+    // oDiv.addEventListener('click',foo,false)
+    // oDiv.removeEventListener('click',foo,false)
+    // oDiv.addEventListener('click',function(){
+    //   console.log(2);
+    // },false)
+  // async function foo(){
+  //   let promise = new Promise((resolve, reject) => {
+  //       setTimeout(() => resolve('done!'), 1000)
+  //   })
+  //   let result = await promise // 直到promise返回一个resolve值（*）
+  //   alert(result) // 'done!' 
+  // }
+  // foo()
+  </script>
+</body>
+</html>

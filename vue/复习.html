@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/vue.js"></script>
+  <style>
+    .active{
+      color: red;
+    }
+    [v-cloak]{
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <!-- {{msg}}
+    <input type="text" v-model="val">
+    <div v-if="isShow">v-if切换</div>
+    <div v-show="isShow">v-show切换</div> -->
+    <!-- <ul>
+      <li v-for="(item,index) in arr" :key="">{{item}}--{{index}}</li>
+    </ul> -->
+    <!-- <button type="button" @click="btn">按钮</button> -->
+    <div :class="className" v-once>{{msg}}</div>
+  </div>
+  <script>
+    let vm = new Vue({
+      el:"#app",
+      data:{
+        msg:"hello world",
+        val:100,
+        isShow:true,
+        arr:[1,2,3,4,5,6,7,8],
+        className:"active"
+      },
+      methods: {
+        btn(){
+          console.log(123);
+        }
+      }
+    })
+  </script>
+</body>
+</html>
