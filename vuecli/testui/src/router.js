@@ -15,7 +15,12 @@ export default new Router({
     {
       path: '/about',
       name: 'about',
-      component: () => import('./views/About.vue')
+      component: () => import('./views/About.vue'),
+      // beforeEnter(to,from,next){
+      //   console.log(to);
+      //   console.log(from);
+      //   next();
+      // }
     },
     {
       path:"/mine",
