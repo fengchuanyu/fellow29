@@ -17,5 +17,31 @@ export default {
   // components: {
   //   HelloWorld
   // }
+  methods: {
+    timest() {
+      var tmp = Date.parse( new Date() ).toString();
+      tmp = tmp.substr(0,10);
+      return tmp;
+    },
+    getReqSign(){
+
+    }
+  },
+  created() {
+    let url = 'https://api.ai.qq.com/fcgi-bin/nlp/nlp_textchat';
+    let params = {
+      'app_id'     : '2111901624',
+      'session'    : '10000',
+      'question'   : '你叫啥',
+      'time_stamp' : this.timest(),
+      'nonce_str'  : Math.random().toString(36).substr(2),
+      'sign'       : '',
+    }
+    console.log(params.short());
+    
+   // axios.get().then(function(res){
+    //   console.log(res);
+    // })
+  }
 }
 </script>
