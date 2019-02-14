@@ -2,8 +2,9 @@
   <div v-bind:class="activeClass">
     <header>
       <span @click="routerPush(btnList[0])">首页</span>
-      <h1>{{activeTitle}}</h1>
+      <h1>{{activeTitle}}{{propsVal}}</h1>
     </header>
+    
     <nav>
       <ul>
         <!-- <li>电影</li>
@@ -17,12 +18,6 @@
 </template>
 <script>
 export default {
-  created () {
-    console.log(this.navVal.title,this.navVal.className);
-    this.activeClass = this.navVal.className;
-    this.activeTitle = this.navVal.title
-    
-  },
   data() {
     return {
       activeTitle:'电影',
@@ -58,7 +53,32 @@ export default {
       this.activeTitle = obj.name;
       this.$router.push(obj.routerPath);
     }
-  }
+  },
+  computed: {
+    propsVal(){
+      // this.activeClass = this.navVal.className;
+      // this.activeTitle = this.navVal.title
+      return this.navVal.title
+    }
+  },
+  watch: {
+    propsVal(){
+      this.activeClass = this.navVal.className;
+      this.activeTitle = this.navVal.title
+    }
+  },
+  // computed: {
+  //   propsVal(){
+  //     return this.navVal.title
+  //   }
+  // },
+  // watch: {
+  //   propsVal(val){
+  //     console.log(val);
+  //     this.activeClass = this.navVal.className;
+  //     this.activeTitle = this.navVal.title
+  //   }
+  // },
 }
 </script>
 <style scoped>

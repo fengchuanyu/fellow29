@@ -6,7 +6,6 @@
 <script>
 export default {
   created(){
-    console.log("音乐");
     let obj = {
       title:"音乐",
       className:"music"

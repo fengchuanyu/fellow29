@@ -6,7 +6,11 @@
 <script>
 export default {
   created(){
-    console.log("书籍");
+    let obj = {
+      title:"书籍",
+      className:"book"
+    }
+    this.$emit("changeNav",obj)
   }
 }
 </script>

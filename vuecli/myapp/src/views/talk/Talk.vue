@@ -6,7 +6,11 @@
 <script>
 export default {
   created(){
-    console.log("聊天");
+    let obj = {
+      title:"聊天",
+      className:"talk"
+    }
+    this.$emit("changeNav",obj)
   }
 }
 </script>

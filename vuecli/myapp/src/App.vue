@@ -17,8 +17,6 @@ export default {
   },
   methods: {
     change(obj){
-      console.log(obj);
-      
       this.activeNav.title = obj.title;
       this.activeNav.className = obj.className;
     }
