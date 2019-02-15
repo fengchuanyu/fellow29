@@ -89,6 +89,7 @@ export default {
     width: 100%;
     height: 1rem;
     background-color:rgb(33, 150, 243);
+    text-align: center;
   }
   .movie header,.movie nav{
     background-color: rgb(33, 150, 243);

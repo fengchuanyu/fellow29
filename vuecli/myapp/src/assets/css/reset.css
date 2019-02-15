@@ -603,3 +603,9 @@ audio:not([controls]) {
 }
 
 /*# sourceMappingURL=neat.css.map */
+
+.clearfix::after{
+  content: "";
+  display: block;
+  clear: both;
+}
