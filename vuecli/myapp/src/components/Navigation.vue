@@ -2,7 +2,7 @@
   <div v-bind:class="activeClass">
     <header>
       <span @click="routerPush(btnList[0])">首页</span>
-      <h1>{{activeTitle}}{{propsVal}}</h1>
+      <h1>{{activeTitle}}</h1>
     </header>
     
     <nav>
