@@ -10,7 +10,9 @@
   "dependencies": {
     "js-md5": "^0.7.3",
     "vue": "^2.5.22",
+    "vue-aplayer": "^1.6.1",
     "vue-router": "^3.0.1",
+    "vue-swipe": "^2.4.0",
     "vuex": "^3.0.1"
   },
   "devDependencies": {

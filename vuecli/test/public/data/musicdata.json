@@ -1,0 +1,39 @@
+{
+  "musicData": [{
+    "title": "我要你",
+    "artist": "老狼",
+    "src": "http://up.mcyt.net/down/43422.mp3",
+    "pic": "http://omratag7g.bkt.clouddn.com/%E6%88%91%E8%A6%81%E4%BD%A0.jpg",
+    "lrc": "lrc/我要你.lrc"
+  }, {
+    "title": "成都",
+    "artist": "赵雷",
+    "src": "http://up.mcyt.net/down/40586.mp3",
+    "pic": "http://p4.music.126.net/34YW1QtKxJ_3YnX9ZzKhzw==/2946691234868155.jpg",
+    "lrc": "lrc/成都-赵雷.lrc"
+  }, {
+    "title": "就是爱你",
+    "artist": "陶喆",
+    "src": "http://up.mcyt.net/md5/53/MTAzMTM1_Qq4329912.mp3",
+    "pic": "https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=1407964657,2382644691&fm=58",
+    "lrc": "lrc/就是爱你.lrc"
+  }, {
+    "title": "假如爱有天意",
+    "artist": "李健",
+    "src": "http://vip.baidu190.com/uploads/2017/2016065bafeb879b4aba87b7a99e280ada503d.mp3",
+    "pic": "http://omratag7g.bkt.clouddn.com/%E6%9D%8E%E5%81%A5.jpg",
+    "lrc": "lrc/假如爱有天意.lrc"
+  }, {
+    "title": "十年",
+    "artist": "陈奕迅",
+    "src": "http://www.0dutv.com/plug/down/up2.php/4830342.mp3",
+    "pic": "https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=3825361386,3954933951&fm=58",
+    "lrc": "lrc/十年.lrc"
+  }, {
+    "title": "刚好遇见你",
+    "artist": "李玉刚",
+    "src": "http://up.mcyt.net/md5/53/OTk1MDE2NA_Qq4329912.mp3",
+    "pic": "http://p4.music.126.net/lDyytkTaPYVTb1Vpide6AA==/18591642115187138.jpg",
+    "lrc": "lrc/刚好遇见你-李玉刚.lrc"
+  }]
+}
