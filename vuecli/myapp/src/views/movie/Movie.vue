@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul>
-      <li class="item-list clearfix" v-for="(item,index) in dataList" :key="index">
+      <li class="item-list clearfix" v-for="(item,index) in dataList" :key="index" @click="goDetail(item.id)">
         <div class="list-left">
           <img :src="item.cover.url" alt="">
         </div>
@@ -34,7 +34,7 @@ export default {
       let scrollTop = document.documentElement.scrollTop;//当前滚动高度
       let scrollHeigth = document.documentElement.scrollHeight;//滚动条可滚动高度
       console.log(clientHeight,scrollTop,scrollHeigth)
-      if(clientHeight+scrollTop>=scrollHeigth-10 && this.isLoading && this.dataList.length !=25){
+      if(clientHeight+scrollTop>=scrollHeigth-10 && this.isLoading && this.dataList.length !=22){
         this.listStart+=10;
         this.getData()
       }
@@ -57,6 +57,9 @@ export default {
       .catch((res)=>{
         console.log('失败');
       })
+    },
+    goDetail(id){
+      this.$router.push({name:"moviedetail",params:{movieId:id}})
     }
   },
 

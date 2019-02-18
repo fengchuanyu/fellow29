@@ -28,6 +28,9 @@
     position: fixed;
     bottom: 1rem;
   }
+  .talk-form li{
+    margin:20px 0
+  }
   .talk-bar span{
     padding:5px 10px;
     background-color: rgb(195, 240, 195);
