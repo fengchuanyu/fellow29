@@ -1,6 +1,6 @@
 <template>
   <div>
-    <aplayer v-if="isShow" autoplay :music="musicList[0]" :list="musicList"/>
+    <aplayer v-if="isShow" autoplay :music="musicList[0]" :list="musicList" :showLrc="true"/>
   </div>
 </template>
 <script>
@@ -32,7 +32,6 @@ export default {
         arr.forEach((element,index) => {
           arr[index].lrc=location.origin+location.pathname+element.lrc
         });
-        console.log(arr);
         this.musicList = arr;
         this.isShow = true
       })
