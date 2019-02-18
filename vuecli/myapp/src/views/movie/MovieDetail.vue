@@ -15,7 +15,6 @@ export default {
     }
   },
   created () {
-    console.log(this.$route.params.movieId);
     this.getData()
     
   },
@@ -26,6 +25,12 @@ export default {
       axios.get(proxy+url)
       .then((res)=>{
         this.movieInfo = res.data;
+        console.log(res);
+        
+      })
+      .catch((res)=>{
+        console.log(123);
+        
       })
     }
   },

@@ -1,16 +1,42 @@
 <template>
   <div>
-    <h1>音乐</h1>
+    <aplayer v-if="isShow" autoplay :music="musicList[0]" :list="musicList"/>
   </div>
 </template>
 <script>
+import Aplayer from 'vue-aplayer'
+import Axios from 'axios';
 export default {
+  components: {
+    Aplayer
+  },
+  data () {
+    return {
+      musicList:[],
+      isShow:false
+    }
+  },
   created(){
     let obj = {
       title:"音乐",
       className:"music"
     }
     this.$emit("changeNav",obj)
+    this.getData();
+  },
+  methods: {
+    getData(){
+      Axios.get("./data/musicdata.json")
+      .then((res)=>{
+        let arr = res.data.musicData;
+        arr.forEach((element,index) => {
+          arr[index].lrc=location.origin+location.pathname+element.lrc
+        });
+        console.log(arr);
+        this.musicList = arr;
+        this.isShow = true
+      })
+    }
   }
 }
 </script>
