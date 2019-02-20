@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/react.production.min.js"></script>
+  <script src="./js/react-dom.production.min.js"></script>
+  <script src="./js/browser.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+  class General extends React.Component{
+    constructor(props) {
+      super(props);
+      
+    }
+    callSolider(){
+      this.props.generalPas(this.props.name)
+    }
+    render(){
+      return (
+        <div>
+          将军{this.props.name}有{this.props.solider}士兵
+          <button onClick={this.callSolider.bind(this)}>调兵</button>
+        </div>
+      )
+    }
+  }
+  class King extends React.Component{
+    constructor(props) {
+      super(props);
+      this.state={
+        solider:100,
+        general1:100,
+        general2:100
+      }
+    }
+    soliderMsg(user){
+      let solider = this.state.solider;
+      let general1 = this.state.general1;
+      let general2 = this.state.general2;
+      if(user == 'a'){
+        general1+=10;
+      }else if(user == 'b'){
+        general2+=10;
+      }
+      solider-=10;
+
+      this.setState({
+        solider,
+        general1,
+        general2
+      })
+    }
+    render(){
+      return(
+        <div>
+          <h1>国王有{this.state.solider}士兵</h1>
+          <General generalPas={this.soliderMsg.bind(this)} name={'a'} solider={this.state.general1}/> 
+          <General generalPas={this.soliderMsg.bind(this)} name={'b'} solider={this.state.general2}/> 
+        </div>
+      )
+    }
+    
+  }
+
+  ReactDOM.render(
+    <King/>,
+    document.getElementById("root")
+  )
+  </script>
+</body>
+</html>
