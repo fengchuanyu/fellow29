@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/react.production.min.js"></script>
+  <script src="./js/react-dom.production.min.js"></script>
+  <script src="./js/browser.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+  class TestForm extends React.Component{
+    constructor(props) {
+      super(props);
+      this.state= {
+        inp:"",
+        isChecked:true
+      }
+    }
+    change(event){
+      this.setState({
+        inp:event.target.value
+      })
+    }
+    check(event){
+     
+      console.log(event.target.checked);
+      
+    }
+    onSubmit(event){
+      console.log(this.refs);
+      console.log(this.input2);
+      
+      event.preventDefault();
+    }
+    render(){
+      return(
+        <div>
+            <form onSubmit={this.onSubmit.bind(this)}>
+              <input ref="input1" type="text"/>
+              <input ref={(input) => this.input2 = input} type="text" name="inp"/>
+              <input type='text' onChange={this.change.bind(this)}/>
+              <select onChange={this.change.bind(this)}>
+                <option value="grapefruit">Grapefruit</option>
+                <option value="lime">Lime</option>
+                <option value="coconut">Coconut</option>
+                <option value="mango">Mango</option>
+              </select> 
+              <input type="checkbox" onChange={this.check.bind(this)} checked={this.state.isChecked}/> 
+              <button>提交</button>
+              </form>
+            {this.state.inp}
+        </div>
+      )
+    }
+  }
+  ReactDOM.render(
+    <TestForm/>,
+    document.getElementById("root")
+  )
+  </script>
+</body>
+</html>
