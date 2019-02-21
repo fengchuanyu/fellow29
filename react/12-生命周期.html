@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/react.production.min.js"></script>
+  <script src="./js/react-dom.production.min.js"></script>
+  <script src="./js/browser.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    class Test extends React.Component{
+      constructor(props) {
+        super(props);
+        this.state={
+          count:0
+        }
+      }
+      // componentWillMount(){
+      //   console.log('TestF:componentWillMount');
+      // }
+      // componentDidMount(){
+      //   console.log('TestF:componentDidMount',ReactDOM.findDOMNode(this));
+      // }
+      // componentWillReceiveProps(nextProps){
+      //   console.log('componentWillReceiveProps',nextProps);
+      // }
+      // shouldComponentUpdate(nextProps,nextState){
+      //   console.log('shouldComponentUpdate',nextProps,nextState);
+      //   // if(nextState.count>5){
+      //   //   return true
+      //   // }else{
+      //   //   return false
+      //   // }
+      //   return true
+      // }
+      // componentWillUpdate(){
+      //   console.log('componentWillUpdate');
+      // }
+      // componentDidUpdate(){
+      //   console.log('componentDidUpdate');
+      // }
+      // componentWillUnmount (){
+      //   console.log('componentWillUnmount');
+      // }
+      add(){
+        this.setState({
+          count:this.state.count+1
+        })
+      }
+      render(){
+        let com1 = <TestC num={this.state.count}/>
+        if(this.state.count>5){
+          com1 = null
+        }
+        return(
+          <div>
+              <h1>{this.state.count}</h1>
+              <h1>hello {this.props.msg}</h1>
+              <button onClick={this.add.bind(this)}>add</button>
+              {com1}
+          </div>
+        )
+      }
+    }
+    class TestC extends React.Component{
+      constructor(props) {
+        super(props);
+        
+      }
+      // componentWillMount(){
+      //   console.log('TestC:componentWillMount');
+      // }
+      // componentDidMount(){
+      //   console.log('TestC:componentDidMount',ReactDOM.findDOMNode(this));
+      // }
+      componentWillReceiveProps(nextProps){
+        console.log('componentWillReceiveProps',nextProps);
+      }
+      componentWillUnmount (){
+        console.log('componentWillUnmount');
+      }
+      render(){
+        return(
+          <h1>hello{this.props.num}</h1>
+        )
+      }
+    }
+    ReactDOM.render(
+      <Test msg={'world'}/>,
+      document.getElementById("root")
+    )
+  </script>
+</body>
+</html>
