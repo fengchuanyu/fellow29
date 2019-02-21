@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/react.production.min.js"></script>
+  <script src="./js/react-dom.production.min.js"></script>
+  <script src="./js/browser.min.js"></script>
+  <style>
+    
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+
+    function Foo(){
+      let isShow = true;
+      let str = null;
+      if(isShow) {
+        str = <Foo2/>
+      }else{
+        str = <FooP/>
+      }
+      let textColor={
+        color:"red"
+      }
+      return <div>{str}</div>
+    }  
+    class Foo2 extends React.Component{
+      constructor(props) {
+        super(props);
+        this.state={
+          count:0,
+          cName:"active"
+        }
+      }
+      render(){
+        return(
+          <div className={this.state.cName}>
+            {this.state.count}
+          </div>
+        )
+      }
+    }  
+    class FooP extends React.Component{
+      constructor(props) {
+        super(props);
+        this.state={
+          isShow:"foo2"
+        }
+      }
+      render(){
+        return (
+          <div>
+            {this.state.isShow == "foo" ? <Foo/> : <Foo2/>}
+          </div>
+        )
+        
+        
+      }
+    }
+    ReactDOM.render(
+      <div><Foo/></div>,
+      document.getElementById("root")
+    )
+  </script>
+</body>
+</html>

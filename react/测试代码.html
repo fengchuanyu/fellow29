@@ -12,8 +12,18 @@
 <body>
   <div id="root"></div>
   <script type="text/babel">
+  let arr = [1,2,3,4,5,6]
+  let str = arr.map((item,index)=>{
+    return <div>{item}</div>
+  })
   function Add(props) {
-    return <div><h1>hello</h1><Com1/></div>
+    let style = {
+      color:"red"
+    }
+    return (<div style={style}>{
+        arr.map((item,index)=>{
+            return <div>{item}</div>})
+    }</div>)
   }
   class Com1 extends React.Component{
     constructor(props) {
@@ -32,6 +42,9 @@
     render() {
       return(
         <form onSubmit={this.handleSubmit} >
+          {
+            Array.isArray(arr) ? <Add/> : null
+          }
           <input ref={(inpt)=>this.inpt=inpt} name="inp" onChange={this.logRef}/>
           <button onClick={this.add.bind(this)}>add</button>  
         </form>
@@ -39,7 +52,7 @@
     }
   }
   ReactDOM.render(
-    <Add/>,
+    <Com1/>,
     document.getElementById("root")
   )
   </script>
