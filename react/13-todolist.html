@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="./js/react.production.min.js"></script>
+  <script src="./js/react-dom.production.min.js"></script>
+  <script src="./js/browser.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+  class TodoTable extends React.Component{
+      constructor(props) {
+        super(props);
+        this.state={
+          dataList:[]
+        }
+      }
+      componentDidMount(){
+        this.setState({
+          dataList:this.props.list
+        })
+      }
+      componentWillReceiveProps(nextProps){
+        console.log(nextProps);
+        this.setState({
+          dataList:nextProps.list
+        })
+      }
+      del(id){
+        
+        this.props.delFun(id);
+      }
+      render(){
+        let mapList = this.state.dataList.map((item,index)=>{
+          return(
+            <tr key={item.id}>
+              <th scope="row">
+                <input type="checkbox"/>
+              </th>
+              <td>{item.info}</td>
+              <td>{item.time}</td>
+              <td>{item.count}</td>
+              <td><button type="button" class="btn btn-info btn-sm" onClick={this.del.bind(this,item.id)}>删除</button></td>
+            </tr>
+          )
+        })
+        console.log(mapList);
+        
+        return(
+          <div>
+            <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">待办事项</th>
+                  <th scope="col">待办时间</th>
+                  <th scope="col">待办用时</th>
+                  <th scope="col">操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                {mapList}
+                <tr>
+                  <th scope="row">
+                      <button type="button" class="btn btn-danger btn-sm">删除选中</button>
+                  </th>
+                  <td colspan="4">总共用时：0</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        )
+      }
+    }
+    class TodoForm extends React.Component{
+      constructor(props) {
+        super(props);
+        this.state={
+          info:"",
+          count:"",
+          time:""
+        }
+      }
+      change(event){
+        this.setState({
+          [event.target.name]:event.target.value
+        })
+      }
+      add(){
+        this.props.addFun(this.state)
+      }
+      render(){
+        return(
+          <div class="mb-5 mt-5">
+            <form>
+              <div class="row">
+                <div class="col">
+                  <input type="text" name="info" class="form-control" onChange={this.change.bind(this)} placeholder="待办事项"/>
+                </div>
+                <div class="col">
+                  <input type="date" name="time" class="form-control" onChange={this.change.bind(this)}/>
+                </div>
+                <div class="col">
+                  <input type="text" name="count" class="form-control" onChange={this.change.bind(this)} placeholder="预计用时"/>
+                </div>
+                <button type="button" class="btn btn-primary" onClick={this.add.bind(this)}>添加</button>
+              </div>
+            </form>
+          </div>
+        )
+      }
+    }
+    class TodoList extends React.Component{
+      constructor(props) {
+        super(props);
+        this.state={
+          dataList:[
+          {
+              id:0,
+              isActive:false,
+              info:"上课",
+              count:2,
+              time:'2018-09-14'
+            },{
+              id:1,
+              isActive:false,
+              info:'吃饭',
+              count:2,
+              time:'2018-09-14'
+            },{
+              id:2,
+              isActive:false,
+              info:'午休',
+              count:2,
+              time:'2018-09-14'
+            },{
+              id:3,
+              isActive:false,
+              info:'篮球',
+              count:2,
+              time:'2018-09-14'
+            },{
+              id:4,
+              isActive:false,
+              info:'聚会',
+              count:2,
+              time:'2018-09-14'
+            },{
+              id:5,
+              isActive:false,
+              info:'上课',
+              count:2,
+              time:'2018-09-14'
+            }
+          ]
+        }
+        this.add = this.add.bind(this);
+        this.del = this.del.bind(this);
+      }
+      add(list){
+        let nowList = this.state.dataList;
+        let thisObj = list;
+        thisObj.isActive = false;
+        thisObj.id = nowList[nowList.length-1].id+1
+        nowList.push(thisObj);
+        this.setState({
+          dataList:nowList
+        })
+      }
+      del(id){
+        let list = this.state.dataList;
+        list = list.filter((item,index)=>{
+          if(item.id!=id){
+            return item
+          }
+        })
+        this.setState({
+          dataList: list
+        })
+      }
+      render(){
+        return(
+          <div class="container">
+            <div>
+              <TodoForm addFun={this.add}/>
+            </div>
+            <div>
+              <TodoTable delFun={this.del} list={this.state.dataList}/>
+            </div>
+          </div>
+        )
+      }
+    }
+    ReactDOM.render(
+      <TodoList/>,
+      document.getElementById("root")
+    )
+  </script>
+</body>
+</html>
