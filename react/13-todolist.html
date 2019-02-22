@@ -9,6 +9,11 @@
   <script src="./js/react.production.min.js"></script>
   <script src="./js/react-dom.production.min.js"></script>
   <script src="./js/browser.min.js"></script>
+  <style>
+    .active{
+      background-color: #b8daff;
+    }
+  </style>
 </head>
 <body>
   <div id="root"></div>
@@ -26,7 +31,6 @@
         })
       }
       componentWillReceiveProps(nextProps){
-        console.log(nextProps);
         this.setState({
           dataList:nextProps.list
         })
@@ -35,12 +39,22 @@
         
         this.props.delFun(id);
       }
+      check(id){
+        this.props.checkFun(id)
+      }
+      delCheck(){
+        this.props.delCheckFun()
+      }
       render(){
+        let sum = 0;
         let mapList = this.state.dataList.map((item,index)=>{
+          if(item.isActive){
+            sum+=item.count
+          }
           return(
-            <tr key={item.id}>
+            <tr key={item.id} className={item.isActive?"active":""} onClick={this.check.bind(this,item.id)}>
               <th scope="row">
-                <input type="checkbox"/>
+                <input type="checkbox" checked={item.isActive?true:false}/>
               </th>
               <td>{item.info}</td>
               <td>{item.time}</td>
@@ -49,8 +63,6 @@
             </tr>
           )
         })
-        console.log(mapList);
-        
         return(
           <div>
             <table class="table">
@@ -67,9 +79,9 @@
                 {mapList}
                 <tr>
                   <th scope="row">
-                      <button type="button" class="btn btn-danger btn-sm">删除选中</button>
+                      <button type="button" class="btn btn-danger btn-sm" onClick={this.delCheck.bind(this)}>删除选中</button>
                   </th>
-                  <td colspan="4">总共用时：0</td>
+                  <td colspan="4">总共用时：{sum}</td>
                 </tr>
               </tbody>
             </table>
@@ -92,7 +104,7 @@
         })
       }
       add(){
-        this.props.addFun(this.state)
+        this.props.addFun({...this.state})
       }
       render(){
         return(
@@ -161,6 +173,8 @@
         }
         this.add = this.add.bind(this);
         this.del = this.del.bind(this);
+        this.check = this.check.bind(this);
+        this.delCheck = this.delCheck.bind(this);
       }
       add(list){
         let nowList = this.state.dataList;
@@ -179,6 +193,30 @@
             return item
           }
         })
+        console.log(list);
+        
+        this.setState({
+          dataList: list
+        })
+      }
+      check(id){
+        let list = this.state.dataList;
+        for(let i=0;i<list.length;i++){
+          if(list[i].id==id){
+            list[i].isActive=!list[i].isActive
+          }
+        }
+        this.setState({
+          dataList: list
+        })
+      }
+      delCheck(){
+        let list = this.state.dataList;
+        list = list.filter((item,index)=>{
+          if(!item.isActive){
+            return item
+          }
+        })
         this.setState({
           dataList: list
         })
@@ -190,7 +228,7 @@
               <TodoForm addFun={this.add}/>
             </div>
             <div>
-              <TodoTable delFun={this.del} list={this.state.dataList}/>
+              <TodoTable delCheckFun={this.delCheck} checkFun={this.check} delFun={this.del} list={this.state.dataList}/>
             </div>
           </div>
         )
