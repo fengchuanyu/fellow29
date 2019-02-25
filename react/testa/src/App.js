@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Class1 from './components/Class1';
 import Class2 from './components/Class2';
+import Class3 from './components/Class3';
 import {
    BrowserRouter as Router,
    Route,  
@@ -9,6 +10,7 @@ import {
    Switch,
    Redirect
   } from "react-router-dom";
+  
 const Test =({match}) => {
   console.log(match.params.id);
   
@@ -27,14 +29,15 @@ class App extends Component {
         <div>
           <Link to="/">Class1</Link>|
           <Link to="/class2/100">Class2</Link>|
+          <Link to="/class3">Class3</Link>|
           <Link to="/test/101">test</Link>|
           <Link to="/render">render</Link>
           <Switch>
             <Route path={'/class2/:id'} component={Class2}/>
+            <Route path={'/class3'} component={Class3}/>
             <Route path={'/test/:id'} component={Test}/>
             <Route path={'/render'} render={()=><Redirect to="/"/>}/>
             <Route path={'/'} component={Class1}/>
-            
           </Switch>
         </div>
       </Router>
