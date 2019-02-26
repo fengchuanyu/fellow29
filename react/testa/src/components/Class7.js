@@ -1,68 +1,52 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import URL from '../service.config'
+
 export default class Class7 extends Component {
   constructor(props) {
     super(props);
     this.state={
-      dataList:[
-        {
-          id:'001',
-          name:'小明',
-          sex:'男',
-          age:20
-        },
-        {
-          id:'002',
-          name:'小红',
-          sex:'女',
-          age:18
-        },
-        {
-          id:'003',
-          name:'小张',
-          sex:'男',
-          age:23
-        },
-        {
-          id:'004',
-          name:'小王',
-          sex:'男',
-          age:30
-        }
-      ]
+      dataList:[]
     }
   }
-  
+  componentDidMount(){
+    let url = 'https://api.myjson.com/bins/9inum';
+    let url1 = 'https://www.fellow29.com/getData';
+    let url2 = 'https://www.fellow29.com/getData2';
+    let url3 = 'https://www.fellow29.com/getData3'
+    axios.get(url3).then((res)=>{
+      // com = res.data.data.map((item,index)=>{
+      //   return(
+      //     <li key={item.id}>
+      //       <div>{item.name}</div>
+      //       <div><img src="{item.img}" alt=""/></div>
+      //       <div>{item.address}</div>
+      //     </li>
+      //   )
+      // })
+      this.setState({
+        dataList:res.data.data
+      })
+      
+    })
+  }
   render() {
-    let arr = this.state.dataList;
-    let url = 'https://api.myjson.com/bins/9inum'
-    let url2 = URL.getDate
-    let url3 = URL.getDate2
-    let url4 = URL.getDate3
-    let url5 = URL.getData4
-    let url6 = URL.getData5
-    
-  // fetch(url2)
-  // .then(function(response) {
-  //   return response.data.json();
-  // })
-  // .then(function(myJson) {
-  //   console.log(myJson);
-  // });
-  axios.get(url6).then((res)=>{
-    console.log(res);
-  })
-
-
-    let str = arr.map((item,index)=>{
+    let com = null;
+    let nowList = this.state.dataList;
+    com = nowList.map((item,index)=>{
       return(
-        <li key={item.id}>{item.name}</li>
+        <li key={item.id}>
+          <div>{item.name}</div>
+         <div><img src={item.img} alt=""/></div>
+         <div>{item.address}</div>
+        </li>
       )
     })
     return (
+      
       <div>
-        <ul>{str}</ul>
+        <ul>
+          {com}
+        </ul>
       </div>
     )
   }
