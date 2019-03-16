@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <p>
+    <p @click="logForm">
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
       <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
@@ -34,7 +34,26 @@
 export default {
   name: 'HelloWorld',
   props: {
-    msg: String
+    msg:{
+      type:String,
+      default: function () {
+        return 'hello'
+      }
+    },
+    // test:{
+    //   type:Number,
+    //   default: () => {
+    //     return [
+    //       { required: true, message: '密码不能为空', trigger: 'blur' }
+    //     ]
+    //   }
+    // }
+    
+  },
+  methods: {
+    logForm(){
+      console.log(this.msg);
+    }
   }
 }
 </script>

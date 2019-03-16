@@ -30,43 +30,43 @@
     //   console.log('失败');
     // })
 
-   let a= new Promise(function(resolve,reject){
-      $.get('./a.json',function(res){
-        // resolve();
-        resolve();
-      })
-    }).then(function(){
-      console.log('成功');
-      $.get('./a.json',function(res){
-        return '123'
-      })
-      return '123'
-    }).then(function(res){
-      console.log(res);
-      return 'abc'
-    })
-   .then(function(res){
-      console.log(res);
-    })
+  //  let a= new Promise(function(resolve,reject){
+  //     $.get('./a.json',function(res){
+  //       // resolve();
+  //       resolve();
+  //     })
+  //   }).then(function(){
+  //     console.log('成功');
+  //     $.get('./a.json',function(res){
+  //       return '123'
+  //     })
+  //     return '123'
+  //   }).then(function(res){
+  //     console.log(res);
+  //     return 'abc'
+  //   })
+  //  .then(function(res){
+  //     console.log(res);
+  //   })
     
 
-    // function ajaxProm(url){
-    //   return new Promise(function(resolve,reject){
-    //     $.get(url,function(res){
-    //       resolve(res);
-    //     })
-    //   })
-    // }
+    function ajaxProm(url){
+      return new Promise(function(resolve,reject){
+        $.get(url,function(res){
+          resolve(res);
+        })
+      })
+    }
 
-    // ajaxProm('./a.json').then(function(res){
-    //   console.log(res);
-    //   return ajaxProm("./b.json")
-    // }).then(function(res){
-    //   console.log(res);
-    //   return ajaxProm("./c.json");
-    // }).then(function(res){
-    //   console.log(res);
-    // })
+    ajaxProm('./a.json').then(function(res){
+      console.log(res);
+      return ajaxProm("./b.json")
+    }).then(function(res){
+      console.log(res);
+      return ajaxProm("./c.json");
+    }).then(function(res){
+      console.log(res);
+    })
 
     // let a = new Promise(function(resolve,reject){
     //   $.get('./a.json',function(){

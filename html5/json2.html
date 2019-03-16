@@ -38,12 +38,24 @@
     }
     // var obj2 = clone(obj1);
 
-
+    
     var obj2 = JSON.stringify(obj1);
 
     obj1.parent.age = '110'
     console.log(JSON.parse(obj2));
     
+    function copy(obj){
+      let newObjt = JSON.stringify(obj)
+      return JSON.parse(newObjt)
+    }
+
+    var obj={
+      myObj:obj2
+    }
+    var obj2 = {
+      name:"小王",
+      age:"2"
+    }
 
   </script>
 </body>

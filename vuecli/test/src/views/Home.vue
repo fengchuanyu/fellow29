@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+    <HelloWorld/>
     <h2>{{$store.state.count}}</h2>
   </div>
   
@@ -9,15 +9,20 @@
 
 <script>
 // @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
+import HelloWorld from '@/components/HelloWorld.vue'
 import store from '@/store.js'
 import md5 from 'js-md5';
 export default {
   store,
   name: 'home',
-  // components: {
-  //   HelloWorld
-  // }
+  components: {
+    HelloWorld
+  },
+  data(){
+    return{
+      num:0
+    }
+  },
   methods: {
     timest() {
       var tmp = Date.parse( new Date() ).toString();
