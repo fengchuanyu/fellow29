@@ -1,6 +1,6 @@
 var http = require('http');
 var server = http.createServer(function(req,res){
-  console.log(req.url);
+  console.log(req.url); 
   
     res.setHeader('Content-Type','text/html;charset=UTF-8')
     if(req.url=="/"){
