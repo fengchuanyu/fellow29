@@ -1,0 +1,14 @@
+{
+  "name": "xf_packge",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "./lib/indexadmin.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mrfeng",
+  "license": "ISC"
+}
